@@ -1,0 +1,16 @@
+# Smithery directory listing for Untap.
+#
+# https://smithery.ai/docs/build/project-config/smithery.yaml
+#
+# Untap exposes a hosted remote MCP server at https://untap.money/api/mcp
+# (Streamable HTTP transport, OAuth 2.1 with Dynamic Client Registration via
+# Supabase). End-users sign in with Google through the branded consent screen
+# and connect their existing Untap account; there are no API keys to copy.
+
+startCommand:
+  type: http
+  configSchema:
+    type: object
+    properties: {}
+
+url: https://untap.money/api/mcp
