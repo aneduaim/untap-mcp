@@ -1,0 +1,24 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.aneduaim/untap-mcp",
+  "title": "Untap",
+  "description": "Untap finds money UK travellers are already owed. Tell Claude or ChatGPT about a delayed train, a cancelled flight, a TfL statement or a parking ticket and Untap returns the verdict, the deadline and the operator submit link. Made in London.",
+  "version": "1.0.0",
+  "websiteUrl": "https://untap.money/connect",
+  "icons": [
+    {
+      "src": "https://untap.money/icon.svg",
+      "mimeType": "image/svg+xml"
+    }
+  ],
+  "repository": {
+    "url": "https://github.com/aneduaim/untap-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://untap.money/api/mcp"
+    }
+  ]
+}
