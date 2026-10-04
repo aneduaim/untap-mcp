@@ -1,0 +1,9 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "untap": {
+      "type": "streamable-http",
+      "url": "https://untap.money/api/mcp"
+    }
+  }
+}

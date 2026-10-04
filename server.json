@@ -2,19 +2,22 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.aneduaim/untap-mcp",
   "title": "Untap",
-  "description": "UK refunds inside your AI assistant: train delays, flights, TfL, parking. Made in London.",
-  "version": "1.0.0",
+  "description": "Check UK Delay Repay, UK261 flights and TfL refunds. Save claims and check commutes on request.",
+  "version": "1.3.0",
   "websiteUrl": "https://untap.money/connect",
-  "icons": [
-    {
-      "src": "https://untap.money/icon.svg",
-      "mimeType": "image/svg+xml"
-    }
-  ],
   "repository": {
     "url": "https://github.com/aneduaim/untap-mcp",
     "source": "github"
   },
+  "icons": [
+    {
+      "src": "https://untap.money/untap-avatar-512.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
+      ]
+    }
+  ],
   "remotes": [
     {
       "type": "streamable-http",

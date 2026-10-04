@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "untap": {
+      "type": "http",
+      "url": "https://untap.money/api/mcp"
+    }
+  }
+}

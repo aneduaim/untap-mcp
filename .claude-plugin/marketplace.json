@@ -1,0 +1,19 @@
+{
+  "name": "untap",
+  "description": "Untap plugins: check UK train, flight and TfL refunds from your AI assistant.",
+  "owner": {
+    "name": "Untap",
+    "email": "contact@untap.money"
+  },
+  "metadata": {
+    "description": "Untap plugins: check UK train, flight and TfL refunds from your AI assistant."
+  },
+  "plugins": [
+    {
+      "name": "untap",
+      "source": "./plugins/claude",
+      "description": "Check whether you are owed money for a delayed train, a disrupted flight, a TfL overcharge or a UK parking ticket, and get the operator's own claim link.",
+      "category": "finance"
+    }
+  ]
+}

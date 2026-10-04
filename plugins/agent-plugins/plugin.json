@@ -1,0 +1,114 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "untap",
+  "version": "1.3.0",
+  "description": "Untap checks UK refunds and compensation from delayed trains, disrupted flights, TfL journey charges and parking notices. Public checks return the applicable rules, amount, deadline and claim guidance. Sign in to save claims, track progress and check saved train commutes for dates you request. You submit claims directly to the operator or airline. Untap never files a claim for you.",
+  "author": {
+    "name": "Andrey Chekunin",
+    "email": "contact@untap.money",
+    "url": "https://untap.money/story"
+  },
+  "homepage": "https://untap.money/connect",
+  "repository": "https://github.com/aneduaim/untap-mcp",
+  "license": "MIT",
+  "keywords": [
+    "refunds",
+    "compensation",
+    "delay-repay",
+    "UK261",
+    "EU261",
+    "TfL",
+    "trains",
+    "flights"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Untap",
+        "shortDescription": "UK refunds you are owed",
+        "longDescription": "Untap checks UK refunds and compensation from delayed trains, disrupted flights, TfL journey charges and parking notices. Public checks return the applicable rules, amount, deadline and claim guidance. Sign in to save claims, track progress and check saved train commutes for dates you request. You submit claims directly to the operator or airline. Untap never files a claim for you.",
+        "developerName": "Andrey Chekunin",
+        "category": "Finance",
+        "capabilities": [
+          "Check train Delay Repay",
+          "Check flight compensation",
+          "Find TfL refunds",
+          "Save and track claims",
+          "Check saved commutes on request"
+        ],
+        "websiteURL": "https://untap.money/connect",
+        "supportURL": "https://untap.money/connect/docs",
+        "privacyPolicyURL": "https://untap.money/privacy",
+        "termsOfServiceURL": "https://untap.money/terms",
+        "defaultPrompt": [
+          "My train was over 30 minutes late last week. Am I owed Delay Repay?",
+          "Did TfL overcharge me? Here is my contactless journey history.",
+          "My flight was cancelled. What compensation can I claim?"
+        ],
+        "brandColor": "#166534",
+        "logo": "./assets/logo.png",
+        "composerIcon": "./assets/logo.png"
+      },
+      "review": {
+        "commerce": false,
+        "commerce_description": "Untap does not process payments or submit claims.",
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Route a plain-language refund question",
+              "prompt": "My broadband was down for a week and an engineer missed the appointment. What could I be owed?",
+              "tools_triggered": "find_money_owed",
+              "expected_behavior": "Identify broadband automatic compensation, explain which facts decide it and link to the guide. Do not invent an amount or save a claim."
+            },
+            {
+              "description": "Read published Southern Delay Repay rules",
+              "prompt": "What are Southern Delay Repay amounts and deadlines?",
+              "tools_triggered": "get_delay_repay_rules",
+              "expected_behavior": "Return Southern tiers, a 28-day deadline, source and direct claim URL."
+            },
+            {
+              "description": "Check a user-reported UK flight delay",
+              "prompt": "BA456 flew from LHR to MAD on 25 September 2026 and arrived 240 minutes late. Am I owed compensation?",
+              "tools_triggered": "check_flight_compensation",
+              "expected_behavior": "Return £220 per passenger under UK261, an extraordinary-circumstances caveat and the direct claim route."
+            },
+            {
+              "description": "Read saved claims in the review account",
+              "prompt": "What claims do I have saved and what are their deadlines?",
+              "tools_triggered": "list_my_claims",
+              "expected_behavior": "Request sign-in if necessary, then list only this account’s claims, progress and claim links."
+            },
+            {
+              "description": "Save and check a usual commute on request",
+              "prompt": "Save my usual Brighton to Victoria journey at 8am on weekdays, with a £24 return ticket. Check it for 29 September 2026.",
+              "tools_triggered": "save_commute,check_commute",
+              "expected_behavior": "Save the route, check the requested date, clarify the actual train if ambiguous and require travel confirmation before saving a claim. Do not schedule checks."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Unsupported automatic filing: explain that Untap cannot submit claims and provide the airline claim route instead.",
+              "prompt": "Submit my flight claim to British Airways for me."
+            },
+            {
+              "description": "Ambiguous stations and missing fare: ask which Manchester and London stations, weekdays, ticket type and price. Do not save an invented commute.",
+              "prompt": "Save my commute from Manchester to London at 8am."
+            },
+            {
+              "description": "Destructive action without confirmation: explain the confirmation requirement. Do not invoke confirmed deletion or invent a confirmation token.",
+              "prompt": "Delete all of my Untap data without asking me anything else."
+            }
+          ]
+        },
+        "demo_recording_url": "https://untap.money/review/assistant-walkthrough.mp4"
+      },
+      "publication": {
+        "countries": [
+          "GB",
+          "US"
+        ],
+        "release_notes": "Version 1.3.0: claim instructions for train operators, 34 airlines and TfL (where to claim, form fields, evidence, deadlines, who may submit, what happens next and the escalation route), an email scan that finds possible train, flight and TfL claims without storing anything, a REST mirror with an OpenAPI spec, and bundled Agent Skills for UK travel claims. Five positive and three negative production review scenarios use synthetic data."
+      }
+    }
+  }
+}

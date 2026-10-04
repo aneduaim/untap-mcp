@@ -1,0 +1,20 @@
+{
+  "name": "untap",
+  "interface": {
+    "displayName": "Untap"
+  },
+  "plugins": [
+    {
+      "name": "untap",
+      "source": {
+        "source": "local",
+        "path": "./plugins/agent-plugins"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Finance"
+    }
+  ]
+}

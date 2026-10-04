@@ -1,0 +1,29 @@
+{
+  "name": "untap",
+  "displayName": "Untap",
+  "version": "1.3.0",
+  "description": "Untap checks UK refunds and compensation from delayed trains, disrupted flights, TfL journey charges and parking notices. Public checks return the applicable rules, amount, deadline and claim guidance. Sign in to save claims, track progress and check saved train commutes for dates you request. You submit claims directly to the operator or airline. Untap never files a claim for you.",
+  "author": {
+    "name": "Andrey Chekunin",
+    "email": "contact@untap.money",
+    "url": "https://untap.money/story"
+  },
+  "homepage": "https://untap.money/connect",
+  "repository": "https://github.com/aneduaim/untap-mcp",
+  "license": "MIT",
+  "keywords": [
+    "refunds",
+    "compensation",
+    "delay-repay",
+    "UK261",
+    "EU261",
+    "TfL",
+    "trains",
+    "flights"
+  ],
+  "icon": "./assets/logo.png",
+  "documentationUrl": "https://untap.money/connect/docs",
+  "supportUrl": "https://untap.money/connect/docs",
+  "privacyPolicyUrl": "https://untap.money/privacy",
+  "termsOfServiceUrl": "https://untap.money/terms"
+}
