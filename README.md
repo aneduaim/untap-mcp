@@ -27,6 +27,14 @@ Tools live on the server, so they update in every assistant without a new packag
 
 **Cursor and Grok Bot:** `plugins/cursor` is the Cursor plugin package, listed in `.cursor-plugin/marketplace.json`. You can also add `https://untap.money/api/mcp` in Cursor's MCP settings.
 
+**Gemini CLI:** this repository is a Gemini CLI extension (`gemini-extension.json` and `GEMINI.md` at the root).
+
+```
+gemini extensions install https://github.com/aneduaim/untap-mcp
+```
+
+Account tools sign in with `/mcp auth untap`.
+
 **Any other MCP client:** connect to `https://untap.money/api/mcp` over Streamable HTTP. Account tools sign you in through OAuth 2.1 with dynamic client registration; there are no API keys.
 
 Setup guides for each assistant: [untap.money/connect](https://untap.money/connect).
@@ -41,6 +49,7 @@ Setup guides for each assistant: [untap.money/connect](https://untap.money/conne
 | `.claude-plugin/marketplace.json` | Claude Code marketplace | Claude Code, claude.ai |
 | `.cursor-plugin/marketplace.json` | Cursor marketplace | Cursor |
 | `.agents/plugins/marketplace.json` | Agent Plugins repo marketplace | Codex, ChatGPT desktop |
+| `gemini-extension.json`, `GEMINI.md` | Gemini CLI extension manifest and context file | Gemini CLI, geminicli.com/extensions |
 | `server.json` | Official MCP Registry entry | registry.modelcontextprotocol.io |
 | `smithery.yaml` | Smithery listing | smithery.ai |
 
