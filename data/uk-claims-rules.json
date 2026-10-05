@@ -1,0 +1,4325 @@
+{
+  "name": "Untap UK claims rules: Delay Repay, UK261 and EU261, TfL refunds and dispute schemes",
+  "description": "Every rule Untap applies to UK train delay, flight delay and Transport for London refund claims, one record per rule: Delay Repay thresholds, payout tiers and claim forms for each train operator, where to claim from each airline and its dispute scheme, TfL refund windows and thresholds, and the UK261 and EU261 compensation bands, ombudsmen and time limits. Each record names its sources, the date each was last checked and a version that changes when the rule does.",
+  "url": "https://untap.money/open-data/rules",
+  "version": "2026-10-05.65c95941",
+  "date_published": "2026-10-05",
+  "last_changed": "2026-10-05",
+  "licence": {
+    "name": "Creative Commons Attribution 4.0 International",
+    "short": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "attribution": "Untap",
+  "citation": "Untap (2026). Untap UK claims rules: Delay Repay, UK261 and EU261, TfL refunds and dispute schemes. Version 2026-10-05.65c95941. Licensed under CC BY 4.0. https://untap.money/open-data/rules",
+  "publisher": {
+    "name": "Untap",
+    "url": "https://untap.money",
+    "email": "contact@untap.money"
+  },
+  "changelog": {
+    "page": "https://untap.money/open-data/changelog",
+    "feed": "https://untap.money/open-data/changelog.xml",
+    "json": "https://untap.money/open-data/rules/changelog.json"
+  },
+  "files": {
+    "json": "https://untap.money/open-data/rules.json",
+    "csv": "https://untap.money/open-data/rules.csv",
+    "categories": {
+      "rail_operator": {
+        "json": "https://untap.money/open-data/rules/rail-operators.json",
+        "csv": "https://untap.money/open-data/rules/rail-operators.csv"
+      },
+      "airline": {
+        "json": "https://untap.money/open-data/rules/airlines.json",
+        "csv": "https://untap.money/open-data/rules/airlines.csv"
+      },
+      "tfl": {
+        "json": "https://untap.money/open-data/rules/tfl.json",
+        "csv": "https://untap.money/open-data/rules/tfl.csv"
+      },
+      "scheme": {
+        "json": "https://untap.money/open-data/rules/schemes.json",
+        "csv": "https://untap.money/open-data/rules/schemes.csv"
+      }
+    }
+  },
+  "record_count": 90,
+  "counts_by_category": {
+    "rail_operator": 23,
+    "airline": 34,
+    "tfl": 17,
+    "scheme": 16
+  },
+  "notes": [
+    "last_checked is the oldest date among a record’s sources. verification is the weakest way a load-bearing source was read: statute, live, archive, untap_guide, search_snippet, unverified or untap_practice.",
+    "version changes only when a rule’s values, claim URL or sources change. Re-checking a source does not change it.",
+    "These are the rules Untap applies. Before relying on one, check it with the company or regulator named in its sources."
+  ],
+  "records": [
+    {
+      "id": "rail_operator/VT",
+      "category": "rail_operator",
+      "subject": "Avanti West Coast",
+      "code": "VT",
+      "rule_type": "delay_repay",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "values": {
+        "scheme": "DR15",
+        "threshold_minutes": 15,
+        "tiers_single": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "tiers_return": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          },
+          {
+            "from_minutes": 120,
+            "percent_of_single_fare": 200
+          }
+        ],
+        "whole_return_fare_from_minutes": 120,
+        "cancellation_percent_of_single_fare": 100,
+        "claim_deadline_days": 28,
+        "automatic_compensation": "one-click",
+        "automatic_scope": "Advance tickets bought directly from Avanti, opt-in",
+        "rules_note": "Table row: 120 or more, 100% on single, return and season",
+        "escalation": "Rail Ombudsman",
+        "escalation_url": "https://www.railombudsman.org"
+      },
+      "claim_url": "https://avantiwestcoast.co.uk/help-and-support/delay-repay",
+      "sources": [
+        {
+          "name": "Avanti West Coast: Delay Repay rules",
+          "url": "https://www.avantiwestcoast.co.uk/help-and-support/delay-repay",
+          "via": "live",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay/avanti-west-coast",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "ba672f76a4ca",
+      "page_url": "https://untap.money/open-data/rules#rail_operator-VT"
+    },
+    {
+      "id": "rail_operator/CC",
+      "category": "rail_operator",
+      "subject": "c2c",
+      "code": "CC",
+      "rule_type": "delay_repay",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "values": {
+        "scheme": "DR15",
+        "threshold_minutes": 15,
+        "tiers_single": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "tiers_return": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          },
+          {
+            "from_minutes": 120,
+            "percent_of_single_fare": 200
+          }
+        ],
+        "whole_return_fare_from_minutes": 120,
+        "cancellation_percent_of_single_fare": 100,
+        "claim_deadline_days": 28,
+        "automatic_compensation": "automatic",
+        "automatic_scope": "c2c Smartcard only",
+        "rules_note": "120+ pays 100% of the cost of your return journey. The automatic Smartcard scheme also pays 3p a minute for 2 to 14 minutes, not modelled",
+        "escalation": "Rail Ombudsman",
+        "escalation_url": "https://www.railombudsman.org"
+      },
+      "claim_url": "https://c2c-online.co.uk/help-feedback/delay-repay/",
+      "sources": [
+        {
+          "name": "c2c: Delay Repay rules",
+          "url": "https://www.c2c-online.co.uk/help_centre/compensation/how-much-automatic-delay-repay-compensation-will-i-receive/",
+          "via": "live",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay/c2c",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "b65bb290b7a6",
+      "page_url": "https://untap.money/open-data/rules#rail_operator-CC"
+    },
+    {
+      "id": "rail_operator/CH",
+      "category": "rail_operator",
+      "subject": "Chiltern Railways",
+      "code": "CH",
+      "rule_type": "delay_repay",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "values": {
+        "scheme": "DR15",
+        "threshold_minutes": 15,
+        "tiers_single": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "tiers_return": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          },
+          {
+            "from_minutes": 120,
+            "percent_of_single_fare": 200
+          }
+        ],
+        "whole_return_fare_from_minutes": 120,
+        "cancellation_percent_of_single_fare": 100,
+        "claim_deadline_days": 28,
+        "automatic_compensation": "unverified",
+        "automatic_scope": null,
+        "rules_note": null,
+        "escalation": "Rail Ombudsman",
+        "escalation_url": "https://www.railombudsman.org"
+      },
+      "claim_url": "https://chilternrailways.delayrepaycompensation.com/",
+      "sources": [
+        {
+          "name": "Chiltern Railways: Delay Repay rules",
+          "url": "https://www.chilternrailways.co.uk/compensation",
+          "via": "live",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay/chiltern-railways",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "edaa677c754a",
+      "page_url": "https://untap.money/open-data/rules#rail_operator-CH"
+    },
+    {
+      "id": "rail_operator/EM",
+      "category": "rail_operator",
+      "subject": "East Midlands Railway",
+      "code": "EM",
+      "rule_type": "delay_repay",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "values": {
+        "scheme": "DR15",
+        "threshold_minutes": 15,
+        "tiers_single": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "tiers_return": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          },
+          {
+            "from_minutes": 120,
+            "percent_of_single_fare": 200
+          }
+        ],
+        "whole_return_fare_from_minutes": 120,
+        "cancellation_percent_of_single_fare": 100,
+        "claim_deadline_days": 28,
+        "automatic_compensation": "none",
+        "automatic_scope": null,
+        "rules_note": "Live site returns a bot check; archive capture 22 Sep 2026",
+        "escalation": "Rail Ombudsman",
+        "escalation_url": "https://www.railombudsman.org"
+      },
+      "claim_url": "https://www.eastmidlandsrailway.co.uk/delay-repay",
+      "sources": [
+        {
+          "name": "East Midlands Railway: Delay Repay rules",
+          "url": "https://web.archive.org/web/20260922150144/https://www.eastmidlandsrailway.co.uk/delay-repay",
+          "via": "archive",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay/east-midlands-railway",
+      "verification": "archive",
+      "last_checked": "2026-09-30",
+      "version": "708a8fb04724",
+      "page_url": "https://untap.money/open-data/rules#rail_operator-EM"
+    },
+    {
+      "id": "rail_operator/GX",
+      "category": "rail_operator",
+      "subject": "Gatwick Express",
+      "code": "GX",
+      "rule_type": "delay_repay",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "values": {
+        "scheme": "DR15",
+        "threshold_minutes": 15,
+        "tiers_single": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "tiers_return": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          },
+          {
+            "from_minutes": 120,
+            "percent_of_single_fare": 200
+          }
+        ],
+        "whole_return_fare_from_minutes": 120,
+        "cancellation_percent_of_single_fare": 100,
+        "claim_deadline_days": 28,
+        "automatic_compensation": "one-click",
+        "automatic_scope": "Key smartcard only",
+        "rules_note": "One 120-minute claim per day, and one per open return",
+        "escalation": "Rail Ombudsman",
+        "escalation_url": "https://www.railombudsman.org"
+      },
+      "claim_url": "https://www.gatwickexpress.com/help-and-support/delay-repay-compensation",
+      "sources": [
+        {
+          "name": "Gatwick Express: Delay Repay rules",
+          "url": "https://www.gatwickexpress.com/help-and-support/delay-repay-compensation",
+          "via": "live",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay/gatwick-express",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "432329b7660a",
+      "page_url": "https://untap.money/open-data/rules#rail_operator-GX"
+    },
+    {
+      "id": "rail_operator/GN",
+      "category": "rail_operator",
+      "subject": "Great Northern",
+      "code": "GN",
+      "rule_type": "delay_repay",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "values": {
+        "scheme": "DR15",
+        "threshold_minutes": 15,
+        "tiers_single": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "tiers_return": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          },
+          {
+            "from_minutes": 120,
+            "percent_of_single_fare": 200
+          }
+        ],
+        "whole_return_fare_from_minutes": 120,
+        "cancellation_percent_of_single_fare": 100,
+        "claim_deadline_days": 28,
+        "automatic_compensation": "one-click",
+        "automatic_scope": "Key smartcard only, but all ticket types held on it",
+        "rules_note": "One 120-minute claim per day, and one per open return",
+        "escalation": "Rail Ombudsman",
+        "escalation_url": "https://www.railombudsman.org"
+      },
+      "claim_url": "https://www.greatnorthernrail.com/help-and-support/delay-repay-compensation",
+      "sources": [
+        {
+          "name": "Great Northern: Delay Repay rules",
+          "url": "https://www.greatnorthernrail.com/help-and-support/delay-repay-compensation",
+          "via": "live",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay/great-northern",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "75ab35788730",
+      "page_url": "https://untap.money/open-data/rules#rail_operator-GN"
+    },
+    {
+      "id": "rail_operator/GW",
+      "category": "rail_operator",
+      "subject": "Great Western Railway",
+      "code": "GW",
+      "rule_type": "delay_repay",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "values": {
+        "scheme": "DR15",
+        "threshold_minutes": 15,
+        "tiers_single": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "tiers_return": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          },
+          {
+            "from_minutes": 120,
+            "percent_of_single_fare": 200
+          }
+        ],
+        "whole_return_fare_from_minutes": 120,
+        "cancellation_percent_of_single_fare": 100,
+        "claim_deadline_days": 28,
+        "automatic_compensation": "one-click",
+        "automatic_scope": "Advance tickets bought on GWR.com, GWR smartcard seasons, and Touch pay-as-you-go around Bristol",
+        "rules_note": "Top row is worded \"Over 120 minutes\" after a 60 to 119 row, so exactly 120 is treated as the top tier",
+        "escalation": "Rail Ombudsman",
+        "escalation_url": "https://www.railombudsman.org"
+      },
+      "claim_url": "https://gwr.com/help-and-support/refunds-and-compensation/delay-repay",
+      "sources": [
+        {
+          "name": "Great Western Railway: Delay Repay rules",
+          "url": "https://www.gwr.com/help-and-support/refunds-and-compensation/delay-repay",
+          "via": "live",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay/great-western-railway",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "79860ac2c7c3",
+      "page_url": "https://untap.money/open-data/rules#rail_operator-GW"
+    },
+    {
+      "id": "rail_operator/LE",
+      "category": "rail_operator",
+      "subject": "Greater Anglia",
+      "code": "LE",
+      "rule_type": "delay_repay",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "values": {
+        "scheme": "DR15",
+        "threshold_minutes": 15,
+        "tiers_single": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "tiers_return": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          },
+          {
+            "from_minutes": 120,
+            "percent_of_single_fare": 200
+          }
+        ],
+        "whole_return_fare_from_minutes": 120,
+        "cancellation_percent_of_single_fare": 100,
+        "claim_deadline_days": 28,
+        "automatic_compensation": "none",
+        "automatic_scope": null,
+        "rules_note": "Live site returns a bot check; latest archive capture 30 Dec 2025. Search snippets of the live page carry the same wording",
+        "escalation": "Rail Ombudsman",
+        "escalation_url": "https://www.railombudsman.org"
+      },
+      "claim_url": "https://greateranglia.co.uk/about-us/our-performance/delay-repay",
+      "sources": [
+        {
+          "name": "Greater Anglia: Delay Repay rules",
+          "url": "https://web.archive.org/web/20251230093647/https://www.greateranglia.co.uk/about-us/our-performance/delay-repay",
+          "via": "archive",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay/greater-anglia",
+      "verification": "archive",
+      "last_checked": "2026-09-30",
+      "version": "7916ba564cd7",
+      "page_url": "https://untap.money/open-data/rules#rail_operator-LE"
+    },
+    {
+      "id": "rail_operator/NT",
+      "category": "rail_operator",
+      "subject": "Northern Trains",
+      "code": "NT",
+      "rule_type": "delay_repay",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "values": {
+        "scheme": "DR15",
+        "threshold_minutes": 15,
+        "tiers_single": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "tiers_return": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          },
+          {
+            "from_minutes": 120,
+            "percent_of_single_fare": 200
+          }
+        ],
+        "whole_return_fare_from_minutes": 120,
+        "cancellation_percent_of_single_fare": 100,
+        "claim_deadline_days": 28,
+        "automatic_compensation": "one-click",
+        "automatic_scope": "Advance tickets bought directly from Northern",
+        "rules_note": "Top row is worded \"Over 120 Minutes\"; exactly 120 treated as the top tier. Season tickets at 120+ pay one journey, not two",
+        "escalation": "Rail Ombudsman",
+        "escalation_url": "https://www.railombudsman.org"
+      },
+      "claim_url": "https://delayrepay.northernrailway.co.uk/",
+      "sources": [
+        {
+          "name": "Northern Trains: Delay Repay rules",
+          "url": "https://help.northernrailway.co.uk/s/article/Delay-Repay",
+          "via": "live",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay/northern",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "f1e896ce223b",
+      "page_url": "https://untap.money/open-data/rules#rail_operator-NT"
+    },
+    {
+      "id": "rail_operator/SW",
+      "category": "rail_operator",
+      "subject": "South Western Railway",
+      "code": "SW",
+      "rule_type": "delay_repay",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "values": {
+        "scheme": "DR15",
+        "threshold_minutes": 15,
+        "tiers_single": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "tiers_return": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          },
+          {
+            "from_minutes": 120,
+            "percent_of_single_fare": 200
+          }
+        ],
+        "whole_return_fare_from_minutes": 120,
+        "cancellation_percent_of_single_fare": 100,
+        "claim_deadline_days": 28,
+        "automatic_compensation": "one-click",
+        "automatic_scope": "Touch Smartcard and Advance tickets bought on the SWR site",
+        "rules_note": null,
+        "escalation": "Rail Ombudsman",
+        "escalation_url": "https://www.railombudsman.org"
+      },
+      "claim_url": "https://southwesternrailway.com/contact-and-help/delay-repay",
+      "sources": [
+        {
+          "name": "South Western Railway: Delay Repay rules",
+          "url": "https://southwesternrailway.com/contact-and-help/delay-repay",
+          "via": "live",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay/south-western-railway",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "87d25c47d0d3",
+      "page_url": "https://untap.money/open-data/rules#rail_operator-SW"
+    },
+    {
+      "id": "rail_operator/SE",
+      "category": "rail_operator",
+      "subject": "Southeastern",
+      "code": "SE",
+      "rule_type": "delay_repay",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "values": {
+        "scheme": "DR15",
+        "threshold_minutes": 15,
+        "tiers_single": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "tiers_return": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          },
+          {
+            "from_minutes": 120,
+            "percent_of_single_fare": 200
+          }
+        ],
+        "whole_return_fare_from_minutes": 120,
+        "cancellation_percent_of_single_fare": 100,
+        "claim_deadline_days": 28,
+        "automatic_compensation": "one-click",
+        "automatic_scope": "Key smartcard, eTickets and Advance tickets bought direct",
+        "rules_note": null,
+        "escalation": "Rail Ombudsman",
+        "escalation_url": "https://www.railombudsman.org"
+      },
+      "claim_url": "https://delayrepay.southeasternrailway.co.uk/",
+      "sources": [
+        {
+          "name": "Southeastern: Delay Repay rules",
+          "url": "https://www.southeasternrailway.co.uk/help/support/faqs/refunds/delay-repay",
+          "via": "live",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay/southeastern",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "80688d96fdd2",
+      "page_url": "https://untap.money/open-data/rules#rail_operator-SE"
+    },
+    {
+      "id": "rail_operator/SN",
+      "category": "rail_operator",
+      "subject": "Southern",
+      "code": "SN",
+      "rule_type": "delay_repay",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "values": {
+        "scheme": "DR15",
+        "threshold_minutes": 15,
+        "tiers_single": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "tiers_return": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          },
+          {
+            "from_minutes": 120,
+            "percent_of_single_fare": 200
+          }
+        ],
+        "whole_return_fare_from_minutes": 120,
+        "cancellation_percent_of_single_fare": 100,
+        "claim_deadline_days": 28,
+        "automatic_compensation": "one-click",
+        "automatic_scope": "Key smartcard only, but all ticket types held on it",
+        "rules_note": "One 120-minute claim per day, and one per open return",
+        "escalation": "Rail Ombudsman",
+        "escalation_url": "https://www.railombudsman.org"
+      },
+      "claim_url": "https://www.southernrailway.com/help-and-support/delay-repay-compensation",
+      "sources": [
+        {
+          "name": "Southern: Delay Repay rules",
+          "url": "https://www.southernrailway.com/help-and-support/delay-repay-compensation",
+          "via": "live",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay/southern",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "709b65e6dc68",
+      "page_url": "https://untap.money/open-data/rules#rail_operator-SN"
+    },
+    {
+      "id": "rail_operator/TL",
+      "category": "rail_operator",
+      "subject": "Thameslink",
+      "code": "TL",
+      "rule_type": "delay_repay",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "values": {
+        "scheme": "DR15",
+        "threshold_minutes": 15,
+        "tiers_single": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "tiers_return": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          },
+          {
+            "from_minutes": 120,
+            "percent_of_single_fare": 200
+          }
+        ],
+        "whole_return_fare_from_minutes": 120,
+        "cancellation_percent_of_single_fare": 100,
+        "claim_deadline_days": 28,
+        "automatic_compensation": "one-click",
+        "automatic_scope": "Key smartcard only, but all ticket types held on it",
+        "rules_note": "One 120-minute claim per day, and one per open return",
+        "escalation": "Rail Ombudsman",
+        "escalation_url": "https://www.railombudsman.org"
+      },
+      "claim_url": "https://www.thameslinkrailway.com/help-and-support/delay-repay",
+      "sources": [
+        {
+          "name": "Thameslink: Delay Repay rules",
+          "url": "https://www.thameslinkrailway.com/help-and-support/delay-repay",
+          "via": "live",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay/thameslink",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "7261f6112111",
+      "page_url": "https://untap.money/open-data/rules#rail_operator-TL"
+    },
+    {
+      "id": "rail_operator/TP",
+      "category": "rail_operator",
+      "subject": "TransPennine Express",
+      "code": "TP",
+      "rule_type": "delay_repay",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "values": {
+        "scheme": "DR15",
+        "threshold_minutes": 15,
+        "tiers_single": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "tiers_return": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          },
+          {
+            "from_minutes": 120,
+            "percent_of_single_fare": 200
+          }
+        ],
+        "whole_return_fare_from_minutes": 120,
+        "cancellation_percent_of_single_fare": 100,
+        "claim_deadline_days": 28,
+        "automatic_compensation": "one-click",
+        "automatic_scope": "Advance tickets bought directly from TransPennine",
+        "rules_note": "Return at 120+: both portions, not just one way",
+        "escalation": "Rail Ombudsman",
+        "escalation_url": "https://www.railombudsman.org"
+      },
+      "claim_url": "https://delayrepay.tpexpress.co.uk/",
+      "sources": [
+        {
+          "name": "TransPennine Express: Delay Repay rules",
+          "url": "https://www.tpexpress.co.uk/help/delay-repay-compensation",
+          "via": "live",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay/transpennine-express",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "85f5ef885a34",
+      "page_url": "https://untap.money/open-data/rules#rail_operator-TP"
+    },
+    {
+      "id": "rail_operator/AW",
+      "category": "rail_operator",
+      "subject": "Transport for Wales",
+      "code": "AW",
+      "rule_type": "delay_repay",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "values": {
+        "scheme": "DR15",
+        "threshold_minutes": 15,
+        "tiers_single": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "tiers_return": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          },
+          {
+            "from_minutes": 120,
+            "percent_of_single_fare": 200
+          }
+        ],
+        "whole_return_fare_from_minutes": 120,
+        "cancellation_percent_of_single_fare": 100,
+        "claim_deadline_days": 28,
+        "automatic_compensation": "one-click",
+        "automatic_scope": "Advance tickets bought on the Transport for Wales website or app",
+        "rules_note": null,
+        "escalation": "Rail Ombudsman",
+        "escalation_url": "https://www.railombudsman.org"
+      },
+      "claim_url": "https://tfw.wales/help-and-contact/rail/delay-repay",
+      "sources": [
+        {
+          "name": "Transport for Wales: Delay Repay rules",
+          "url": "https://tfw.wales/help-and-contact/rail/delay-repay",
+          "via": "live",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay/transport-for-wales",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "998e01feebf6",
+      "page_url": "https://untap.money/open-data/rules#rail_operator-AW"
+    },
+    {
+      "id": "rail_operator/LM",
+      "category": "rail_operator",
+      "subject": "West Midlands Railway",
+      "code": "LM",
+      "rule_type": "delay_repay",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "values": {
+        "scheme": "DR15",
+        "threshold_minutes": 15,
+        "tiers_single": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "tiers_return": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          },
+          {
+            "from_minutes": 120,
+            "percent_of_single_fare": 200
+          }
+        ],
+        "whole_return_fare_from_minutes": 120,
+        "cancellation_percent_of_single_fare": 100,
+        "claim_deadline_days": 28,
+        "automatic_compensation": "one-click",
+        "automatic_scope": "Advance Single tickets bought through a West Midlands Railway or London Northwestern account",
+        "rules_note": "Every page returns a bot check and no archive copy was reachable. National scheme used; search snippets of this page and the DfT operator table (26 Feb 2026) agree",
+        "escalation": "Rail Ombudsman",
+        "escalation_url": "https://www.railombudsman.org"
+      },
+      "claim_url": "https://westmidlandsrailway.co.uk/about-us/delay-repay",
+      "sources": [
+        {
+          "name": "West Midlands Railway: Delay Repay rules",
+          "url": "https://www.westmidlandsrailway.co.uk/about-us/delay-repay",
+          "via": "unverified",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay/west-midlands-railway",
+      "verification": "unverified",
+      "last_checked": "2026-09-30",
+      "version": "414055d1ff7a",
+      "page_url": "https://untap.money/open-data/rules#rail_operator-LM"
+    },
+    {
+      "id": "rail_operator/LN",
+      "category": "rail_operator",
+      "subject": "London Northwestern Railway",
+      "code": "LN",
+      "rule_type": "delay_repay",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "values": {
+        "scheme": "DR15",
+        "threshold_minutes": 15,
+        "tiers_single": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "tiers_return": [
+          {
+            "from_minutes": 15,
+            "percent_of_single_fare": 25
+          },
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          },
+          {
+            "from_minutes": 120,
+            "percent_of_single_fare": 200
+          }
+        ],
+        "whole_return_fare_from_minutes": 120,
+        "cancellation_percent_of_single_fare": 100,
+        "claim_deadline_days": 28,
+        "automatic_compensation": "one-click",
+        "automatic_scope": "Advance Single tickets bought through a London Northwestern or West Midlands Railway account",
+        "rules_note": "Every page returns a bot check and no archive copy was reachable. National scheme used; a search snippet of this page agrees",
+        "escalation": "Rail Ombudsman",
+        "escalation_url": "https://www.railombudsman.org"
+      },
+      "claim_url": "https://londonnorthwesternrailway.co.uk/about-us/delay-repay",
+      "sources": [
+        {
+          "name": "London Northwestern Railway: Delay Repay rules",
+          "url": "https://www.londonnorthwesternrailway.co.uk/about-us/delay-repay",
+          "via": "unverified",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay/london-northwestern-railway",
+      "verification": "unverified",
+      "last_checked": "2026-09-30",
+      "version": "a0c7eadd15d0",
+      "page_url": "https://untap.money/open-data/rules#rail_operator-LN"
+    },
+    {
+      "id": "rail_operator/XC",
+      "category": "rail_operator",
+      "subject": "CrossCountry",
+      "code": "XC",
+      "rule_type": "delay_repay",
+      "summary": "Pays from 30 minutes late: 50% of the single fare from 30 minutes, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "values": {
+        "scheme": "DR30",
+        "threshold_minutes": 30,
+        "tiers_single": [
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "tiers_return": [
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          },
+          {
+            "from_minutes": 120,
+            "percent_of_single_fare": 200
+          }
+        ],
+        "whole_return_fare_from_minutes": 120,
+        "cancellation_percent_of_single_fare": 100,
+        "claim_deadline_days": 28,
+        "automatic_compensation": "none",
+        "automatic_scope": null,
+        "rules_note": "Live site blocked by Cloudflare; archive capture 22 Sep 2026. Either or both legs over two hours: full cost of the return",
+        "escalation": "Rail Ombudsman",
+        "escalation_url": "https://www.railombudsman.org"
+      },
+      "claim_url": "https://crosscountrytrains.co.uk/help-support/delay-repay",
+      "sources": [
+        {
+          "name": "CrossCountry: Delay Repay rules",
+          "url": "https://web.archive.org/web/20260922150133/https://www.crosscountrytrains.co.uk/help-support/delay-repay",
+          "via": "archive",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay/crosscountry",
+      "verification": "archive",
+      "last_checked": "2026-09-30",
+      "version": "7a2d9b839fd0",
+      "page_url": "https://untap.money/open-data/rules#rail_operator-XC"
+    },
+    {
+      "id": "rail_operator/GR",
+      "category": "rail_operator",
+      "subject": "LNER",
+      "code": "GR",
+      "rule_type": "delay_repay",
+      "summary": "Pays from 30 minutes late: 50% of the single fare from 30 minutes, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "values": {
+        "scheme": "DR30",
+        "threshold_minutes": 30,
+        "tiers_single": [
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "tiers_return": [
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          },
+          {
+            "from_minutes": 120,
+            "percent_of_single_fare": 200
+          }
+        ],
+        "whole_return_fare_from_minutes": 120,
+        "cancellation_percent_of_single_fare": 100,
+        "claim_deadline_days": 28,
+        "automatic_compensation": "one-click",
+        "automatic_scope": "Advance tickets bought directly from LNER",
+        "rules_note": "Also the April 2026 Passenger's Charter. Two Advance Singles bought as a round trip do not count as a return",
+        "escalation": "Rail Ombudsman",
+        "escalation_url": "https://www.railombudsman.org"
+      },
+      "claim_url": "https://lner.co.uk/support/delay-repay/",
+      "sources": [
+        {
+          "name": "LNER: Delay Repay rules",
+          "url": "https://www.lner.co.uk/support/delay-repay/",
+          "via": "live",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay/lner",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "c04615149a82",
+      "page_url": "https://untap.money/open-data/rules#rail_operator-GR"
+    },
+    {
+      "id": "rail_operator/SR",
+      "category": "rail_operator",
+      "subject": "ScotRail",
+      "code": "SR",
+      "rule_type": "delay_repay",
+      "summary": "Pays from 30 minutes late: 50% of the single fare from 30 minutes, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "values": {
+        "scheme": "DR30",
+        "threshold_minutes": 30,
+        "tiers_single": [
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "tiers_return": [
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          },
+          {
+            "from_minutes": 120,
+            "percent_of_single_fare": 200
+          }
+        ],
+        "whole_return_fare_from_minutes": 120,
+        "cancellation_percent_of_single_fare": 100,
+        "claim_deadline_days": 28,
+        "automatic_compensation": "none",
+        "automatic_scope": null,
+        "rules_note": "Live site returns a bot check; archive capture 22 Sep 2026. 2 hours or more: the cost of your single or return ticket",
+        "escalation": "Rail Ombudsman",
+        "escalation_url": "https://www.railombudsman.org"
+      },
+      "claim_url": "https://scotrail.co.uk/plan-your-journey/our-delay-repay-guarantee",
+      "sources": [
+        {
+          "name": "ScotRail: Delay Repay rules",
+          "url": "https://web.archive.org/web/20260922150130/https://www.scotrail.co.uk/plan-your-journey/our-delay-repay-guarantee",
+          "via": "archive",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay/scotrail",
+      "verification": "archive",
+      "last_checked": "2026-09-30",
+      "version": "8b73d7510b71",
+      "page_url": "https://untap.money/open-data/rules#rail_operator-SR"
+    },
+    {
+      "id": "rail_operator/LD",
+      "category": "rail_operator",
+      "subject": "Lumo",
+      "code": "LD",
+      "rule_type": "delay_repay",
+      "summary": "Pays from 30 minutes late: 50% of the single fare from 30 minutes, 100% from 60. On a return ticket, the most paid for one direction is half the return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "values": {
+        "scheme": "DR30",
+        "threshold_minutes": 30,
+        "tiers_single": [
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "tiers_return": [
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "whole_return_fare_from_minutes": null,
+        "cancellation_percent_of_single_fare": 100,
+        "claim_deadline_days": 28,
+        "automatic_compensation": "one-click",
+        "automatic_scope": "LumoFixed and LumoFlex Advance tickets bought on the Lumo website or app, with prior opt-in",
+        "rules_note": "No 120-minute tier: 60+ pays 50% of a return. The customer charter (https://www.lumo.co.uk/help/customer-charter) agrees",
+        "escalation": "Rail Ombudsman",
+        "escalation_url": "https://www.railombudsman.org"
+      },
+      "claim_url": "https://lumo.co.uk/help/delay-repay",
+      "sources": [
+        {
+          "name": "Lumo: Delay Repay rules",
+          "url": "https://www.lumo.co.uk/help/delay-repay",
+          "via": "live",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay/lumo",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "9ee5d29885ec",
+      "page_url": "https://untap.money/open-data/rules#rail_operator-LD"
+    },
+    {
+      "id": "rail_operator/HT",
+      "category": "rail_operator",
+      "subject": "Hull Trains",
+      "code": "HT",
+      "rule_type": "delay_repay",
+      "summary": "Pays from 30 minutes late: 50% of the single fare from 30 minutes, 100% from 60. On a return ticket, the most paid for one direction is half the return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "values": {
+        "scheme": "DR30",
+        "threshold_minutes": 30,
+        "tiers_single": [
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "tiers_return": [
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "whole_return_fare_from_minutes": null,
+        "cancellation_percent_of_single_fare": 100,
+        "claim_deadline_days": 28,
+        "automatic_compensation": "none",
+        "automatic_scope": null,
+        "rules_note": "No 120-minute tier: 60+ pays 50% of a return. The 2026 Passengers' Charter agrees",
+        "escalation": "Rail Ombudsman",
+        "escalation_url": "https://www.railombudsman.org"
+      },
+      "claim_url": "https://delayrepay.hulltrains.co.uk/",
+      "sources": [
+        {
+          "name": "Hull Trains: Delay Repay rules",
+          "url": "https://www.hulltrains.co.uk/support-and-contact/refunds-and-compensation",
+          "via": "live",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay/hull-trains",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "127bb5bd87a4",
+      "page_url": "https://untap.money/open-data/rules#rail_operator-HT"
+    },
+    {
+      "id": "rail_operator/CS",
+      "category": "rail_operator",
+      "subject": "Caledonian Sleeper",
+      "code": "CS",
+      "rule_type": "delay_repay",
+      "summary": "Pays from 30 minutes late: 50% of the single fare from 30 minutes, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "values": {
+        "scheme": "DR30",
+        "threshold_minutes": 30,
+        "tiers_single": [
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          }
+        ],
+        "tiers_return": [
+          {
+            "from_minutes": 30,
+            "percent_of_single_fare": 50
+          },
+          {
+            "from_minutes": 60,
+            "percent_of_single_fare": 100
+          },
+          {
+            "from_minutes": 120,
+            "percent_of_single_fare": 200
+          }
+        ],
+        "whole_return_fare_from_minutes": 120,
+        "cancellation_percent_of_single_fare": 100,
+        "claim_deadline_days": 28,
+        "automatic_compensation": "one-click",
+        "automatic_scope": "Tickets booked directly through sleeper.scot or the Guest Service Centre",
+        "rules_note": "Guest Experience Charter (2019/20, still linked as current): 120+ is a full refund of the fare and Room Supplement on a National Rail return",
+        "escalation": "Rail Ombudsman",
+        "escalation_url": "https://www.railombudsman.org"
+      },
+      "claim_url": "https://sleeper.scot/delay-repay-form/",
+      "sources": [
+        {
+          "name": "Caledonian Sleeper: Delay Repay rules",
+          "url": "https://www.sleeper.scot/auxiliary/terms-and-conditions/",
+          "via": "live",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay/caledonian-sleeper",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "5eef449bffbc",
+      "page_url": "https://untap.money/open-data/rules#rail_operator-CS"
+    },
+    {
+      "id": "airline/BA",
+      "category": "airline",
+      "subject": "British Airways",
+      "code": "BA",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. A refused claim can go to CEDR (Centre for Effective Dispute Resolution).",
+      "values": {
+        "country": "GB",
+        "jurisdiction": "UK",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.britishairways.com/content/information/help-and-contacts/complaints-and-claims",
+        "contact_url_verified": true,
+        "adr_scheme": "CEDR",
+        "adr_scheme_url": "https://www.cedr-assist.com/consumer/aviation/overview/",
+        "escalation": "CEDR (cedr-assist.com), whose decision binds the airline if you accept it",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": []
+      },
+      "claim_url": "https://www.britishairways.com/travel/feedbackclaims/public",
+      "sources": [
+        {
+          "name": "British Airways: delayed or cancelled flights (archive, 7 Aug 2026)",
+          "url": "https://web.archive.org/web/20260807024103/https://www.britishairways.com/content/information/delayed-or-cancelled-flights",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "British Airways: complaints and claims (archive, 1 Oct 2026)",
+          "url": "https://web.archive.org/web/20261001103456/https://www.britishairways.com/content/information/help-and-contacts/complaints-and-claims",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "archive",
+      "last_checked": "2026-09-30",
+      "version": "2818c7543023",
+      "page_url": "https://untap.money/open-data/rules#airline-BA"
+    },
+    {
+      "id": "airline/U2",
+      "category": "airline",
+      "subject": "easyJet",
+      "code": "U2",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. A refused claim can go to AviationADR.",
+      "values": {
+        "country": "GB",
+        "jurisdiction": "UK",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.easyjet.com/en/help-centre/contact/contact-us",
+        "contact_url_verified": true,
+        "adr_scheme": "AviationADR",
+        "adr_scheme_url": "https://www.aviationadr.org.uk/",
+        "escalation": "AviationADR (aviationadr.org.uk), whose decision binds the airline if you accept it",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": [
+          "Booking reference (starts with E or K)",
+          "Flight number (numbers only; the original number if rebooked)",
+          "Original date of the flight",
+          "Reason for the claim: delayed, cancelled or denied boarding (a diverted flight counts as delayed)",
+          "Departure and arrival airports",
+          "Claimant’s first and last name as booked",
+          "Home address and country of residence",
+          "Email address, which has to match the booking",
+          "Mobile number with country code, which has to match the booking",
+          "Whether the claimant made the original booking",
+          "Country of the bank account and payment currency",
+          "Other passengers on the same booking being claimed for",
+          "Supporting documents (optional, under 5 MB)"
+        ]
+      },
+      "claim_url": "https://www.easyjet.com/claim/en/eu261",
+      "sources": [
+        {
+          "name": "easyJet: Compensation Claims Portal",
+          "url": "https://www.easyjet.com/claim/en/eu261",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "easyJet: delays and cancellations",
+          "url": "https://www.easyjet.com/en/help/boarding-and-flying/delays-and-cancellations",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "270e3fbfea15",
+      "page_url": "https://untap.money/open-data/rules#airline-U2"
+    },
+    {
+      "id": "airline/LS",
+      "category": "airline",
+      "subject": "Jet2",
+      "code": "LS",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. It is in no dispute scheme, so a refused UK261 claim goes to the Civil Aviation Authority’s complaints team.",
+      "values": {
+        "country": "GB",
+        "jurisdiction": "UK",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.jet2.com/contact-us",
+        "contact_url_verified": true,
+        "adr_scheme": "none",
+        "adr_scheme_url": null,
+        "escalation": "the Civil Aviation Authority’s Passenger Advice and Complaints Team (caa.co.uk). The airline is in no dispute scheme, and the authority’s view does not bind it",
+        "airline_time_limit": null,
+        "response_time": "Jet2 says it aims to contact the passenger within 28 days.",
+        "form_fields": [
+          "Booking reference",
+          "Passenger name as it appears on the passport",
+          "Full home address",
+          "Flight number, date and route",
+          "Whether booked as Jet2.com flight-only, Jet2holidays or through another tour operator"
+        ]
+      },
+      "claim_url": "https://www.jet2.com/delays-and-disruptions",
+      "sources": [
+        {
+          "name": "Jet2: submit a claim (archive, 29 Apr 2026)",
+          "url": "https://web.archive.org/web/20260429164027/https://www.jet2.com/delays-and-cancellations/submit-a-claim",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Jet2: delays and cancellations (archive, 7 Nov 2025)",
+          "url": "https://web.archive.org/web/20251107195833/https://www.jet2.com/en/delays-and-cancellations",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Jet2: guidance for customers",
+          "url": "https://app.jet2.com/-/media/Jet2/Flights/pdf/Customer-guidance/GFC-Guidance-for-Customers-EN.pdf",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "archive",
+      "last_checked": "2026-09-30",
+      "version": "d5ef8ccba37c",
+      "page_url": "https://untap.money/open-data/rules#airline-LS"
+    },
+    {
+      "id": "airline/BY",
+      "category": "airline",
+      "subject": "TUI Airways",
+      "code": "BY",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. A refused claim can go to AviationADR.",
+      "values": {
+        "country": "GB",
+        "jurisdiction": "UK",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.tui.co.uk/destinations/contact-us",
+        "contact_url_verified": true,
+        "adr_scheme": "AviationADR",
+        "adr_scheme_url": "https://www.aviationadr.org.uk/",
+        "escalation": "AviationADR (aviationadr.org.uk), whose decision binds the airline if you accept it",
+        "airline_time_limit": null,
+        "response_time": "TUI sends an automatic acknowledgement, then no updates until its final response, which it says comes within 56 days.",
+        "form_fields": [
+          "Where the holiday or flight was booked",
+          "Delayed TUI flight number",
+          "Scheduled departure date",
+          "Scheduled departure and arrival airports",
+          "TUI booking reference",
+          "Title, name as on the booking confirmation and date of birth",
+          "Mobile number",
+          "Email address, which has to match the booking",
+          "Other passengers on the booking (up to 20 including the claimant)",
+          "Country of home address and of the bank account (UK or Republic of Ireland)"
+        ]
+      },
+      "claim_url": "https://www.tui.co.uk/destinations/contact-us/flight-delays",
+      "sources": [
+        {
+          "name": "TUI: flight delay claim",
+          "url": "https://www.tui.co.uk/destinations/contact-us/flight-delays",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "TUI: how do I claim my flight delay compensation",
+          "url": "https://www.tui.co.uk/destinations/faq/airport-flights-and-luggage/feedback-on-your-flight-and-airport-experience/how-do-i-claim-my-flight-delay-compensation",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "b58ffec5777d",
+      "page_url": "https://untap.money/open-data/rules#airline-BY"
+    },
+    {
+      "id": "airline/VS",
+      "category": "airline",
+      "subject": "Virgin Atlantic",
+      "code": "VS",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. A refused claim can go to AviationADR.",
+      "values": {
+        "country": "GB",
+        "jurisdiction": "UK",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://help.virginatlantic.com/gb/en/contact-forms.html",
+        "contact_url_verified": true,
+        "adr_scheme": "AviationADR",
+        "adr_scheme_url": "https://www.aviationadr.org.uk/",
+        "escalation": "AviationADR (aviationadr.org.uk), whose decision binds the airline if you accept it",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": [
+          "Title, first name, last name and date of birth",
+          "Flying Club number (optional)",
+          "Email address, entered twice",
+          "Booking reference (6 characters)",
+          "Flight number, departure and arrival airports, original date of travel",
+          "Confirmation that the flight was delayed or cancelled",
+          "Postal address",
+          "How to be paid and payment currency",
+          "Other passengers being claimed for",
+          "Declarations, including permission from the other passengers"
+        ]
+      },
+      "claim_url": "https://help.virginatlantic.com/gb/en/contact-forms.html?webform=feedback--i-need-to-claim-compensation-due-to-a-delay-or-cancelled-flight",
+      "sources": [
+        {
+          "name": "Virgin Atlantic: compensation claim form",
+          "url": "https://help.virginatlantic.com/gb/en/contact-forms.html?webform=feedback--i-need-to-claim-compensation-due-to-a-delay-or-cancelled-flight",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "99e9a00a92eb",
+      "page_url": "https://untap.money/open-data/rules#airline-VS"
+    },
+    {
+      "id": "airline/LM",
+      "category": "airline",
+      "subject": "Loganair",
+      "code": "LM",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. It is in no dispute scheme, so a refused UK261 claim goes to the Civil Aviation Authority’s complaints team.",
+      "values": {
+        "country": "GB",
+        "jurisdiction": "UK",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.loganair.co.uk/contactus/",
+        "contact_url_verified": true,
+        "adr_scheme": "none",
+        "adr_scheme_url": null,
+        "escalation": "the Civil Aviation Authority’s Passenger Advice and Complaints Team (caa.co.uk). The airline is in no dispute scheme, and the authority’s view does not bind it",
+        "airline_time_limit": null,
+        "response_time": "Loganair asks for up to 28 days to respond, or a shorter period where the law sets one.",
+        "form_fields": []
+      },
+      "claim_url": "https://loganaircrcc.zendesk.com/hc/en-gb/requests/new?ticket_form_id=360003017438",
+      "sources": [
+        {
+          "name": "Loganair: compensation",
+          "url": "https://www.loganair.co.uk/helpcentre/compensation/",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Loganair help centre request form (archive, 13 Nov 2025)",
+          "url": "https://web.archive.org/web/20251113124308/https://loganaircrcc.zendesk.com/hc/en-gb/requests/new?ticket_form_id=360003099678",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "archive",
+      "last_checked": "2026-09-30",
+      "version": "7fa5eb09d619",
+      "page_url": "https://untap.money/open-data/rules#airline-LM"
+    },
+    {
+      "id": "airline/FR",
+      "category": "airline",
+      "subject": "Ryanair",
+      "code": "FR",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. A refused claim can go to AviationADR.",
+      "values": {
+        "country": "IE",
+        "jurisdiction": "EU",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.ryanair.com/gb/en/r/help/contact-us",
+        "contact_url_verified": true,
+        "adr_scheme": "AviationADR",
+        "adr_scheme_url": "https://www.aviationadr.org.uk/",
+        "escalation": "AviationADR (aviationadr.org.uk) if it covers your route, or the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": []
+      },
+      "claim_url": "https://www.ryanair.com/gb/en/myryanair/requests/new/eu-261",
+      "sources": [
+        {
+          "name": "Ryanair: beware of claims chasers (archive, 15 Oct 2025)",
+          "url": "https://web.archive.org/web/20251015143620/https://help.ryanair.com/hc/en-ie/articles/12890736320529-Beware-of-claims-chasers",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Ryanair: EU 261 passenger rights (archive, 2 Mar 2026)",
+          "url": "https://web.archive.org/web/20260302100646/https://help.ryanair.com/hc/en-ie/sections/12488602662545-EU-261-Passenger-Rights",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "archive",
+      "last_checked": "2026-09-30",
+      "version": "c80d8abc115a",
+      "page_url": "https://untap.money/open-data/rules#airline-FR"
+    },
+    {
+      "id": "airline/W6",
+      "category": "airline",
+      "subject": "Wizz Air",
+      "code": "W6",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. A refused claim can go to AviationADR.",
+      "values": {
+        "country": "HU",
+        "jurisdiction": "EU",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.wizzair.com/en-gb/help-centre/contact-us",
+        "contact_url_verified": true,
+        "adr_scheme": "AviationADR",
+        "adr_scheme_url": "https://www.aviationadr.org.uk/",
+        "escalation": "AviationADR (aviationadr.org.uk) if it covers your route, or the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": "Wizz Air says it responds to a claim within 30 days.",
+        "form_fields": []
+      },
+      "claim_url": "https://www.wizzair.com/en-gb/information-and-services/compliments-and-complaints",
+      "sources": [
+        {
+          "name": "Wizz Air: EC261 regulation",
+          "url": "https://www.wizzair.com/en-gb/help-centre/my-wizz-account/claims-and-compensation/ec261-regulation",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Wizz Air: compliments and complaints",
+          "url": "https://www.wizzair.com/en-gb/information-and-services/compliments-and-complaints",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "e0204e38731f",
+      "page_url": "https://untap.money/open-data/rules#airline-W6"
+    },
+    {
+      "id": "airline/EI",
+      "category": "airline",
+      "subject": "Aer Lingus",
+      "code": "EI",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. It is in no dispute scheme, so a refused UK261 claim goes to the Civil Aviation Authority’s complaints team.",
+      "values": {
+        "country": "IE",
+        "jurisdiction": "EU",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.aerlingus.com/support/customer-care/requests-and-enquiries/",
+        "contact_url_verified": true,
+        "adr_scheme": "none",
+        "adr_scheme_url": null,
+        "escalation": "the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": []
+      },
+      "claim_url": "https://www.aerlingus.com/app/support/forms/flight-disruption-compensation-form",
+      "sources": [
+        {
+          "name": "Aer Lingus: requests and enquiries",
+          "url": "https://www.aerlingus.com/support/customer-care/requests-and-enquiries/",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Aer Lingus: post-travel enquiry",
+          "url": "https://www.aerlingus.com/support/forms/post-travel-enquiry/",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "AviationADR member list",
+          "url": "https://www.aviationadr.org.uk/complaints-process/airline-and-airport-members-aviationadr/",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "CEDR aviation companies covered",
+          "url": "https://www.cedr-assist.com/consumer/aviation/companies-covered/",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "ADR scheme member lists membership",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "live",
+      "last_checked": "2026-10-04",
+      "version": "bba3185cf260",
+      "page_url": "https://untap.money/open-data/rules#airline-EI"
+    },
+    {
+      "id": "airline/KL",
+      "category": "airline",
+      "subject": "KLM",
+      "code": "KL",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. A refused claim can go to AviationADR.",
+      "values": {
+        "country": "NL",
+        "jurisdiction": "EU",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.klm.co.uk/contact/topic/refund-compensation/subtopic/complaint",
+        "contact_url_verified": true,
+        "adr_scheme": "AviationADR",
+        "adr_scheme_url": "https://www.aviationadr.org.uk/",
+        "escalation": "AviationADR (aviationadr.org.uk) if it covers your route, or the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": []
+      },
+      "claim_url": "https://www.klm.co.uk/claim",
+      "sources": [
+        {
+          "name": "KLM: compensation (archive, 24 Sep 2026)",
+          "url": "https://web.archive.org/web/20260924063203/https://www.klm.co.uk/information/refund-compensation/compensation",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "KLM: passenger rights (archive, 17 May 2026)",
+          "url": "https://web.archive.org/web/20260517210731/https://www.klm.co.uk/information/legal/passenger-rights",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "archive",
+      "last_checked": "2026-09-30",
+      "version": "b312354da531",
+      "page_url": "https://untap.money/open-data/rules#airline-KL"
+    },
+    {
+      "id": "airline/AF",
+      "category": "airline",
+      "subject": "Air France",
+      "code": "AF",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. A refused claim can go to AviationADR.",
+      "values": {
+        "country": "FR",
+        "jurisdiction": "EU",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://wwws.airfrance.co.uk/contact/topic/refund-compensation",
+        "contact_url_verified": true,
+        "adr_scheme": "AviationADR",
+        "adr_scheme_url": "https://www.aviationadr.org.uk/",
+        "escalation": "AviationADR (aviationadr.org.uk) if it covers your route, or the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": []
+      },
+      "claim_url": "https://wwws.airfrance.co.uk/claim",
+      "sources": [
+        {
+          "name": "Air France: claims (archive, 24 Sep 2026)",
+          "url": "https://web.archive.org/web/20260924063203/https://wwws.airfrance.co.uk/information/legal/reclamation",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Air France: assistance and compensation (archive, 8 Feb 2026)",
+          "url": "https://web.archive.org/web/20260208133424/https://wwws.airfrance.co.uk/information/legal/assistance-et-indemnisation",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "archive",
+      "last_checked": "2026-09-30",
+      "version": "7cf678b5313b",
+      "page_url": "https://untap.money/open-data/rules#airline-AF"
+    },
+    {
+      "id": "airline/LH",
+      "category": "airline",
+      "subject": "Lufthansa",
+      "code": "LH",
+      "rule_type": "flight_claim_route",
+      "summary": "The airline’s claim page was seen only in search results and is not verified. A refused claim can go to Schlichtung Reise & Verkehr (a German dispute scheme).",
+      "values": {
+        "country": "DE",
+        "jurisdiction": "EU",
+        "claim_url_verified": false,
+        "claim_url_by_type": {},
+        "contact_url": null,
+        "contact_url_verified": false,
+        "adr_scheme": "SchlichtungReiseVerkehr",
+        "adr_scheme_url": "https://www.schlichtung-reise-und-verkehr.de/en/",
+        "escalation": "Schlichtung Reise & Verkehr (schlichtung-reise-und-verkehr.de), the German scheme the airline has joined, or the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": []
+      },
+      "claim_url": "https://www.lufthansa.com/us/en/fast-compensation",
+      "sources": [
+        {
+          "name": "Lufthansa: compensation in the event of flight delay and cancellation (archive, 27 Oct 2025, title only)",
+          "url": "https://web.archive.org/web/20251027191204/https://www.lufthansa.com/us/en/fast-compensation",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "search_snippet",
+      "last_checked": "2026-09-30",
+      "version": "98e2e1f73c7c",
+      "page_url": "https://untap.money/open-data/rules#airline-LH"
+    },
+    {
+      "id": "airline/LX",
+      "category": "airline",
+      "subject": "Swiss International Air Lines",
+      "code": "LX",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. A refused claim can go to Schlichtung Reise & Verkehr (a German dispute scheme).",
+      "values": {
+        "country": "CH",
+        "jurisdiction": "CH",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.swiss.com/gb/en/customer-support/contact-us",
+        "contact_url_verified": true,
+        "adr_scheme": "SchlichtungReiseVerkehr",
+        "adr_scheme_url": "https://www.schlichtung-reise-und-verkehr.de/en/",
+        "escalation": "Schlichtung Reise & Verkehr (schlichtung-reise-und-verkehr.de), the German scheme the airline has joined, or the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": [
+          "Type of disruption: delay, cancellation, diversion, missed connection, denied boarding or downgrade",
+          "Applying for yourself, your household, or as a third party for the traveller",
+          "Original itinerary: up to 4 flights, each with airline, flight number and date",
+          "How the destination was reached in the end",
+          "Personal details for up to 5 people on the same booking",
+          "Uploads of receipts and authorisations (PDF, JPEG or PNG, up to 3.7 MB each)",
+          "Confirmation that the details are true"
+        ]
+      },
+      "claim_url": "https://www.swiss.com/gb/en/customer-support/contact-us/application-for-compensation-in-the-event-of-flight-irregularities",
+      "sources": [
+        {
+          "name": "SWISS: application for compensation",
+          "url": "https://www.swiss.com/gb/en/customer-support/contact-us/application-for-compensation-in-the-event-of-flight-irregularities",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "e333ab1de197",
+      "page_url": "https://untap.money/open-data/rules#airline-LX"
+    },
+    {
+      "id": "airline/OS",
+      "category": "airline",
+      "subject": "Austrian Airlines",
+      "code": "OS",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. A refused claim can go to Schlichtung Reise & Verkehr (a German dispute scheme).",
+      "values": {
+        "country": "AT",
+        "jurisdiction": "EU",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.austrian.com/gb/en/contact",
+        "contact_url_verified": true,
+        "adr_scheme": "SchlichtungReiseVerkehr",
+        "adr_scheme_url": "https://www.schlichtung-reise-und-verkehr.de/en/",
+        "escalation": "Schlichtung Reise & Verkehr (schlichtung-reise-und-verkehr.de), the German scheme the airline has joined, or the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": [
+          "Type of flight problem: delay, cancellation, diversion, missed connection, denied boarding or downgrade",
+          "Applying for yourself, your household, or as a third party for the traveller",
+          "Booking code",
+          "Planned flights: airline, flight number and date",
+          "How the destination was reached in the end",
+          "For each person: name, address, email, phone and ticket number",
+          "Uploads of receipts and authorisations (up to 3.7 MB)",
+          "Confirmation that the details are true"
+        ]
+      },
+      "claim_url": "https://www.austrian.com/gb/en/footer-pages/help-and-contact/application-for-compensation-in-the-event-of-flight-irregularities",
+      "sources": [
+        {
+          "name": "Austrian Airlines: application for compensation (archive, 12 Sep 2025)",
+          "url": "https://web.archive.org/web/20250912062857/https://www.austrian.com/gb/en/footer-pages/help-and-contact/application-for-compensation-in-the-event-of-flight-irregularities",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "archive",
+      "last_checked": "2026-09-30",
+      "version": "cd60aa886e49",
+      "page_url": "https://untap.money/open-data/rules#airline-OS"
+    },
+    {
+      "id": "airline/VY",
+      "category": "airline",
+      "subject": "Vueling",
+      "code": "VY",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. It is in no dispute scheme, so a refused UK261 claim goes to the Civil Aviation Authority’s complaints team.",
+      "values": {
+        "country": "ES",
+        "jurisdiction": "EU",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.vueling.com/en/we-are-vueling/contact",
+        "contact_url_verified": true,
+        "adr_scheme": "none",
+        "adr_scheme_url": null,
+        "escalation": "the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": []
+      },
+      "claim_url": "https://www.vueling.com/en/customer-services/assistants/compensation",
+      "sources": [
+        {
+          "name": "Vueling help: delay in my flight",
+          "url": "https://help.vueling.com/hc/en-gb/articles/24476547783569-Delay-in-my-flight",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Vueling help: cancelled flights",
+          "url": "https://help.vueling.com/hc/en-gb/articles/23136450765841-Cancelled-flights",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "972c7bd27e59",
+      "page_url": "https://untap.money/open-data/rules#airline-VY"
+    },
+    {
+      "id": "airline/IB",
+      "category": "airline",
+      "subject": "Iberia",
+      "code": "IB",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. It is in no dispute scheme, so a refused UK261 claim goes to the Civil Aviation Authority’s complaints team.",
+      "values": {
+        "country": "ES",
+        "jurisdiction": "EU",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.iberia.com/gb/customer-relations/",
+        "contact_url_verified": true,
+        "adr_scheme": "none",
+        "adr_scheme_url": null,
+        "escalation": "the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": "Iberia says it aims to reply within 7 business days, and up to 21 days for more complex claims.",
+        "form_fields": []
+      },
+      "claim_url": "https://www.iberia.com/gb/claims/flight-disruptions/",
+      "sources": [
+        {
+          "name": "Iberia: claims and receipts (archive, 15 Apr 2026)",
+          "url": "https://web.archive.org/web/20260415045426/https://www.iberia.com/gb/claims-receipts/",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Iberia: flight disruption claims (archive, 14 May 2025)",
+          "url": "https://web.archive.org/web/20250514043837/https://www.iberia.com/gb/claims/flight-disruptions/",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "archive",
+      "last_checked": "2026-09-30",
+      "version": "f0df1bbcdcbf",
+      "page_url": "https://untap.money/open-data/rules#airline-IB"
+    },
+    {
+      "id": "airline/SK",
+      "category": "airline",
+      "subject": "SAS Scandinavian Airlines",
+      "code": "SK",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. A refused claim can go to CEDR (Centre for Effective Dispute Resolution).",
+      "values": {
+        "country": "SE",
+        "jurisdiction": "EU",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.flysas.com/gb-en/customer-service/contact/forms/",
+        "contact_url_verified": true,
+        "adr_scheme": "CEDR",
+        "adr_scheme_url": "https://www.cedr-assist.com/consumer/aviation/overview/",
+        "escalation": "CEDR (cedr-assist.com) if it covers your route, or the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": [
+          "Booking reference (6 characters)",
+          "Original flight number",
+          "Departure date",
+          "Whether the passenger was rebooked on another flight",
+          "Whether the trip was booked through a charter operator"
+        ]
+      },
+      "claim_url": "https://www.flysas.com/en/customer-service/contact/forms/claim-eu261",
+      "sources": [
+        {
+          "name": "SAS: EU261 claim form (archive, 25 Mar 2026)",
+          "url": "https://web.archive.org/web/20260325111821/https://www.flysas.com/en/customer-service/contact/forms/claim-eu261",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "SAS: EU passenger rights (archive, 11 Sep 2025)",
+          "url": "https://web.archive.org/web/20250911033248/https://www.flysas.com/gb-en/legal-info/eu-passenger-rights/",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "archive",
+      "last_checked": "2026-09-30",
+      "version": "95af2100374f",
+      "page_url": "https://untap.money/open-data/rules#airline-SK"
+    },
+    {
+      "id": "airline/DY",
+      "category": "airline",
+      "subject": "Norwegian",
+      "code": "DY",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. It is in no dispute scheme, so a refused UK261 claim goes to the Civil Aviation Authority’s complaints team.",
+      "values": {
+        "country": "NO",
+        "jurisdiction": "EU",
+        "claim_url_verified": true,
+        "claim_url_by_type": {
+          "flight_cancellation": "https://www.norwegian.com/uk/start/refund/expenseclaim/cancellation/"
+        },
+        "contact_url": "https://www.norwegian.com/uk/technical-pages/claims/",
+        "contact_url_verified": true,
+        "adr_scheme": "none",
+        "adr_scheme_url": null,
+        "escalation": "the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": []
+      },
+      "claim_url": "https://www.norwegian.com/uk/start/refund/expenseclaim/delay/",
+      "sources": [
+        {
+          "name": "Norwegian: delayed flights (archive, 13 Aug 2025)",
+          "url": "https://web.archive.org/web/20250813044520/https://www.norwegian.com/uk/travel-info/delayed-and-cancelled-flights/delayed-flights/",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Norwegian: cancelled flights (archive, 9 Aug 2025)",
+          "url": "https://web.archive.org/web/20250809085830/https://www.norwegian.com/uk/travel-info/delayed-and-cancelled-flights/cancelled-flights/",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Norwegian: general conditions of carriage (archive, 7 Jul 2026)",
+          "url": "https://web.archive.org/web/20260707152702/https://www.norwegian.com/uk/booking/booking-information/legal/general-conditions-of-carriage/",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "ADR scheme member lists membership",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "archive",
+      "last_checked": "2026-10-04",
+      "version": "4ecfcc9aa0c8",
+      "page_url": "https://untap.money/open-data/rules#airline-DY"
+    },
+    {
+      "id": "airline/EW",
+      "category": "airline",
+      "subject": "Eurowings",
+      "code": "EW",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. It is in no dispute scheme, so a refused UK261 claim goes to the Civil Aviation Authority’s complaints team.",
+      "values": {
+        "country": "DE",
+        "jurisdiction": "EU",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.eurowings.com/en/information/about-us/company/contact-customer-service.html",
+        "contact_url_verified": true,
+        "adr_scheme": "none",
+        "adr_scheme_url": null,
+        "escalation": "the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": [
+          "Flight number and departure date",
+          "First and last name and email address",
+          "Eurowings booking code",
+          "Bank details (account holder, IBAN, BIC), asked after a successful check"
+        ]
+      },
+      "claim_url": "https://www.eurowings.com/claimtool",
+      "sources": [
+        {
+          "name": "Eurowings: contact customer service (archive, 30 Jul 2026)",
+          "url": "https://web.archive.org/web/20260730172301/https://www.eurowings.com/en/information/about-us/company/contact-customer-service.html",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Eurowings: online service, right to compensation (archive, 12 Aug 2025)",
+          "url": "https://web.archive.org/web/20250812154455/https://www.eurowings.com/en/4u/online-service-for-the-right-to-compensation.html",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "ADR scheme member lists membership",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "archive",
+      "last_checked": "2026-10-04",
+      "version": "a3943b63080d",
+      "page_url": "https://untap.money/open-data/rules#airline-EW"
+    },
+    {
+      "id": "airline/HV",
+      "category": "airline",
+      "subject": "Transavia",
+      "code": "HV",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. It is in no dispute scheme, so a refused UK261 claim goes to the Civil Aviation Authority’s complaints team.",
+      "values": {
+        "country": "NL",
+        "jurisdiction": "EU",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.transavia.com/help/en-eu/contact",
+        "contact_url_verified": true,
+        "adr_scheme": "none",
+        "adr_scheme_url": null,
+        "escalation": "the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": "Transavia’s form page says it responds within 2 weeks; an older help article said 3 to 6 weeks.",
+        "form_fields": [
+          "Category: flight disruptions",
+          "Flight number and flight date",
+          "Booking number",
+          "Receipts for expenses (optional)"
+        ]
+      },
+      "claim_url": "https://www.transavia.com/en-eu/faq/contact/",
+      "sources": [
+        {
+          "name": "Transavia: contact form (archive, 4 Jun 2026)",
+          "url": "https://web.archive.org/web/20260604164859/https://www.transavia.com/en-eu/faq/contact/",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Transavia: submit a claim (archive, 9 Aug 2025)",
+          "url": "https://web.archive.org/web/20250809090729/https://www.transavia.com/help/en-eu/contact-complaints/contact/submit-claim",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "archive",
+      "last_checked": "2026-09-30",
+      "version": "16cba864e9fc",
+      "page_url": "https://untap.money/open-data/rules#airline-HV"
+    },
+    {
+      "id": "airline/AY",
+      "category": "airline",
+      "subject": "Finnair",
+      "code": "AY",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. It is in no dispute scheme, so a refused UK261 claim goes to the Civil Aviation Authority’s complaints team.",
+      "values": {
+        "country": "FI",
+        "jurisdiction": "EU",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.finnair.com/feedback",
+        "contact_url_verified": true,
+        "adr_scheme": "none",
+        "adr_scheme_url": null,
+        "escalation": "the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": "Finnair asks for compensation claims within two months of the disrupted flight. That is its own requirement and shorter than the legal limitation period; a claim made inside two months avoids a dispute over it.",
+        "response_time": null,
+        "form_fields": []
+      },
+      "claim_url": "https://www.finnair.com/gb-en/customer-care-and-contact-information/contact-forms/feedback-and-compensation",
+      "sources": [
+        {
+          "name": "Finnair: feedback and compensation",
+          "url": "https://www.finnair.com/gb-en/customer-care-and-contact-information/contact-forms/feedback-and-compensation",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "1bbd57239554",
+      "page_url": "https://untap.money/open-data/rules#airline-AY"
+    },
+    {
+      "id": "airline/AZ",
+      "category": "airline",
+      "subject": "ITA Airways",
+      "code": "AZ",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. It is in no dispute scheme, so a refused UK261 claim goes to the Civil Aviation Authority’s complaints team.",
+      "values": {
+        "country": "IT",
+        "jurisdiction": "EU",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.ita-airways.com/en_gb/support/contact-assistance/customer-center.html",
+        "contact_url_verified": true,
+        "adr_scheme": "none",
+        "adr_scheme_url": null,
+        "escalation": "the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": []
+      },
+      "claim_url": "https://www.complaint.ita-airways.com/s/complaint?language=en_US&market=EN",
+      "sources": [
+        {
+          "name": "ITA Airways: delays and cancellations (archive, 15 Mar 2026)",
+          "url": "https://web.archive.org/web/20260315115143/https://www.ita-airways.com/en_gb/fly-ita/ita-world/passenger-rights/delays-and-cancellations.html",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "archive",
+      "last_checked": "2026-09-30",
+      "version": "868573ac98b9",
+      "page_url": "https://untap.money/open-data/rules#airline-AZ"
+    },
+    {
+      "id": "airline/TP",
+      "category": "airline",
+      "subject": "TAP Air Portugal",
+      "code": "TP",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. A refused claim can go to AviationADR.",
+      "values": {
+        "country": "PT",
+        "jurisdiction": "EU",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.flytap.com/en-gb/support/talk-to-us",
+        "contact_url_verified": true,
+        "adr_scheme": "AviationADR",
+        "adr_scheme_url": "https://www.aviationadr.org.uk/",
+        "escalation": "AviationADR (aviationadr.org.uk) if it covers your route, or the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": []
+      },
+      "claim_url": "https://www.flytap.com/en-gb/help/requests-complaints/complaints",
+      "sources": [
+        {
+          "name": "TAP: delays and cancellations",
+          "url": "https://www.flytap.com/en-gb/help/delays-cancellations",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "TAP: complaints",
+          "url": "https://www.flytap.com/en-gb/help/requests-complaints/complaints",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "5d5dfdc6f7d8",
+      "page_url": "https://untap.money/open-data/rules#airline-TP"
+    },
+    {
+      "id": "airline/LO",
+      "category": "airline",
+      "subject": "LOT Polish Airlines",
+      "code": "LO",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. It is in no dispute scheme, so a refused UK261 claim goes to the Civil Aviation Authority’s complaints team.",
+      "values": {
+        "country": "PL",
+        "jurisdiction": "EU",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": null,
+        "contact_url_verified": false,
+        "adr_scheme": "none",
+        "adr_scheme_url": null,
+        "escalation": "the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": [
+          "Submitting as the passenger or on the passenger’s behalf",
+          "Title, first name and last name",
+          "Postal address, phone and email",
+          "Travel companions on the same booking (optional)",
+          "Reservation number and ticket number",
+          "Flight number, route, travel date and cabin class",
+          "What the complaint concerns and a message (up to 2,500 characters)",
+          "Attachments (up to 20 files, 20 MB in total)"
+        ]
+      },
+      "claim_url": "https://www.lot.com/gb/en/help-center/contact/forms/form-claim-after-departure",
+      "sources": [
+        {
+          "name": "LOT: claim after departure form (archive, 15 Jun 2026)",
+          "url": "https://web.archive.org/web/20260615013140/https://www.lot.com/gb/en/help-center/contact/forms/form-claim-after-departure",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "archive",
+      "last_checked": "2026-09-30",
+      "version": "b93bca068b52",
+      "page_url": "https://untap.money/open-data/rules#airline-LO"
+    },
+    {
+      "id": "airline/A3",
+      "category": "airline",
+      "subject": "Aegean Airlines",
+      "code": "A3",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. It is in no dispute scheme, so a refused UK261 claim goes to the Civil Aviation Authority’s complaints team.",
+      "values": {
+        "country": "GR",
+        "jurisdiction": "EU",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://en.aegeanair.com/contact/",
+        "contact_url_verified": true,
+        "adr_scheme": "none",
+        "adr_scheme_url": null,
+        "escalation": "the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": [
+          "Category: passenger rights (EC) 261/2004",
+          "Type: file a complaint",
+          "Topic: time change, flight delay, flight cancellation or denied boarding",
+          "Whether the passenger or someone on their behalf is filling it in",
+          "Ticket number and booking reference, flight number and origin",
+          "Compensation requested and any expenses, with the total",
+          "Bank details",
+          "Message, attachments and contact details"
+        ]
+      },
+      "claim_url": "https://en.aegeanair.com/contact/Form/",
+      "sources": [
+        {
+          "name": "Aegean: contact form (archive, 7 May 2026)",
+          "url": "https://web.archive.org/web/20260507145539/https://en.aegeanair.com/contact/Form/",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "archive",
+      "last_checked": "2026-09-30",
+      "version": "05fc7c549659",
+      "page_url": "https://untap.money/open-data/rules#airline-A3"
+    },
+    {
+      "id": "airline/PC",
+      "category": "airline",
+      "subject": "Pegasus Airlines",
+      "code": "PC",
+      "rule_type": "flight_claim_route",
+      "summary": "Untap has not found the airline’s claim page. It is in no dispute scheme, so a refused UK261 claim goes to the Civil Aviation Authority’s complaints team.",
+      "values": {
+        "country": "TR",
+        "jurisdiction": "other",
+        "claim_url_verified": false,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.flypgs.com/en/help-center",
+        "contact_url_verified": true,
+        "adr_scheme": "none",
+        "adr_scheme_url": null,
+        "escalation": "the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": [
+          "Short summary of the complaint",
+          "Flight date and flight number",
+          "Reservation number (PNR)",
+          "Copies of relevant documents"
+        ]
+      },
+      "claim_url": null,
+      "sources": [
+        {
+          "name": "Pegasus: help centre",
+          "url": "https://www.flypgs.com/en/help-center",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Pegasus: passenger rights",
+          "url": "https://www.flypgs.com/en/useful-info/other-info/passenger-rights",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "unverified",
+      "last_checked": "2026-09-30",
+      "version": "33e50e963c57",
+      "page_url": "https://untap.money/open-data/rules#airline-PC"
+    },
+    {
+      "id": "airline/EK",
+      "category": "airline",
+      "subject": "Emirates",
+      "code": "EK",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. It is in no dispute scheme, so a refused UK261 claim goes to the Civil Aviation Authority’s complaints team.",
+      "values": {
+        "country": "AE",
+        "jurisdiction": "other",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.emirates.com/uk/english/help/",
+        "contact_url_verified": true,
+        "adr_scheme": "none",
+        "adr_scheme_url": null,
+        "escalation": "the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": [
+          "Ticket holder’s last name and ticket number (no spaces), then the flight",
+          "Feedback or complaint type",
+          "Title, first name, last name and email address",
+          "Phone number",
+          "Skywards number (optional)",
+          "Country of residence",
+          "The complaint itself (up to 3,000 characters)",
+          "Attachments (up to 6)"
+        ]
+      },
+      "claim_url": "https://www.emirates.com/uk/english/help/forms/complaint/",
+      "sources": [
+        {
+          "name": "Emirates: feedback or complaints form",
+          "url": "https://www.emirates.com/uk/english/help/forms/complaint/",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Emirates: UK delay notice",
+          "url": "https://www.emirates.com/uk/english/before-you-fly/travel/rules-and-notices/delay-notice-uk/",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "435829bdc901",
+      "page_url": "https://untap.money/open-data/rules#airline-EK"
+    },
+    {
+      "id": "airline/QR",
+      "category": "airline",
+      "subject": "Qatar Airways",
+      "code": "QR",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. It is in no dispute scheme, so a refused UK261 claim goes to the Civil Aviation Authority’s complaints team.",
+      "values": {
+        "country": "QA",
+        "jurisdiction": "other",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.qatarairways.com/en-gb/help.html",
+        "contact_url_verified": true,
+        "adr_scheme": "none",
+        "adr_scheme_url": null,
+        "escalation": "the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": []
+      },
+      "claim_url": "https://www.qatarairways.com/en-gb/help.html#feedback",
+      "sources": [
+        {
+          "name": "Qatar Airways: UK air passenger rights",
+          "url": "https://www.qatarairways.com/en-gb/legal/uk-air-passenger-rights.html",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Qatar Airways: help (archive, 24 Sep 2026)",
+          "url": "https://web.archive.org/web/20260924063207/https://www.qatarairways.com/en-gb/help.html",
+          "via": "archive",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "fea41d4fd419",
+      "page_url": "https://untap.money/open-data/rules#airline-QR"
+    },
+    {
+      "id": "airline/EY",
+      "category": "airline",
+      "subject": "Etihad Airways",
+      "code": "EY",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. It is in no dispute scheme, so a refused UK261 claim goes to the Civil Aviation Authority’s complaints team.",
+      "values": {
+        "country": "AE",
+        "jurisdiction": "other",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.etihad.com/en-gb/help/feedback",
+        "contact_url_verified": true,
+        "adr_scheme": "none",
+        "adr_scheme_url": null,
+        "escalation": "the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": []
+      },
+      "claim_url": "https://www.etihad.com/en-gb/help/share-feedback/raise-a-complaint",
+      "sources": [
+        {
+          "name": "Etihad: complaints and feedback",
+          "url": "https://www.etihad.com/en-gb/help/share-feedback",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Etihad: rules and notices",
+          "url": "https://www.etihad.com/en-gb/legal/rules-and-notices",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "34fe367d6ebc",
+      "page_url": "https://untap.money/open-data/rules#airline-EY"
+    },
+    {
+      "id": "airline/TK",
+      "category": "airline",
+      "subject": "Turkish Airlines",
+      "code": "TK",
+      "rule_type": "flight_claim_route",
+      "summary": "The airline’s claim page was seen only in search results and is not verified. A refused claim can go to AviationADR.",
+      "values": {
+        "country": "TR",
+        "jurisdiction": "other",
+        "claim_url_verified": false,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.turkishairlines.com/en-gb/any-questions/get-in-touch/",
+        "contact_url_verified": true,
+        "adr_scheme": "AviationADR",
+        "adr_scheme_url": "https://www.aviationadr.org.uk/",
+        "escalation": "AviationADR (aviationadr.org.uk) if it covers your route, or the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": []
+      },
+      "claim_url": "https://www.turkishairlines.com/en-gb/any-questions/customer-relations/feedback/",
+      "sources": [
+        {
+          "name": "Turkish Airlines: customer relations",
+          "url": "https://www.turkishairlines.com/en-gb/any-questions/customer-relations/",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Turkish Airlines: get in touch",
+          "url": "https://www.turkishairlines.com/en-gb/any-questions/get-in-touch/",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "search_snippet",
+      "last_checked": "2026-09-30",
+      "version": "accac024e257",
+      "page_url": "https://untap.money/open-data/rules#airline-TK"
+    },
+    {
+      "id": "airline/AA",
+      "category": "airline",
+      "subject": "American Airlines",
+      "code": "AA",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. It is in no dispute scheme, so a refused UK261 claim goes to the Civil Aviation Authority’s complaints team.",
+      "values": {
+        "country": "US",
+        "jurisdiction": "other",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.aa.com/i18n/customer-service/contact-american/customer-relations.jsp?locale=en_GB",
+        "contact_url_verified": true,
+        "adr_scheme": "none",
+        "adr_scheme_url": null,
+        "escalation": "the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": [
+          "Topic, subject and reason",
+          "Contact details, postal address and email address",
+          "Confirmation code or ticket number",
+          "Flight number, date of travel, origin and destination"
+        ]
+      },
+      "claim_url": "https://www.aa.com/contact/forms?topic=",
+      "sources": [
+        {
+          "name": "American Airlines: customer relations (UK)",
+          "url": "https://www.aa.com/i18n/customer-service/contact-american/customer-relations.jsp?locale=en_GB",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "American Airlines: EU passenger rights",
+          "url": "https://www.aa.com/web/i18n/customer-service/support/passenger-rights-european-union.html?locale=en_ES",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "dada9e76d681",
+      "page_url": "https://untap.money/open-data/rules#airline-AA"
+    },
+    {
+      "id": "airline/UA",
+      "category": "airline",
+      "subject": "United Airlines",
+      "code": "UA",
+      "rule_type": "flight_claim_route",
+      "summary": "The airline’s claim page was seen only in search results and is not verified. It is in no dispute scheme, so a refused UK261 claim goes to the Civil Aviation Authority’s complaints team.",
+      "values": {
+        "country": "US",
+        "jurisdiction": "other",
+        "claim_url_verified": false,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.united.com/en/us/fly/customer-support.html",
+        "contact_url_verified": true,
+        "adr_scheme": "none",
+        "adr_scheme_url": null,
+        "escalation": "the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": []
+      },
+      "claim_url": "https://www.united.com/en/us/customercare",
+      "sources": [
+        {
+          "name": "United Airlines: customer support",
+          "url": "https://www.united.com/en/us/fly/customer-support.html",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "United Airlines: help centre",
+          "url": "https://www.united.com/en/us/fly/help-center.html",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "search_snippet",
+      "last_checked": "2026-09-30",
+      "version": "dcdb39fe203e",
+      "page_url": "https://untap.money/open-data/rules#airline-UA"
+    },
+    {
+      "id": "airline/DL",
+      "category": "airline",
+      "subject": "Delta Air Lines",
+      "code": "DL",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. A refused claim can go to AviationADR.",
+      "values": {
+        "country": "US",
+        "jurisdiction": "other",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.delta.com/us/en/need-help/overview",
+        "contact_url_verified": true,
+        "adr_scheme": "AviationADR",
+        "adr_scheme_url": "https://www.aviationadr.org.uk/",
+        "escalation": "AviationADR (aviationadr.org.uk) if it covers your route, or the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": []
+      },
+      "claim_url": "https://www.delta.com/us/en/need-help/overview?commentComplaintsForm",
+      "sources": [
+        {
+          "name": "Delta: exit EU refund or compensation request",
+          "url": "https://www.delta.com/us/en/change-cancel/exit-eu-compensation",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "cf4c6375474a",
+      "page_url": "https://untap.money/open-data/rules#airline-DL"
+    },
+    {
+      "id": "airline/AC",
+      "category": "airline",
+      "subject": "Air Canada",
+      "code": "AC",
+      "rule_type": "flight_claim_route",
+      "summary": "Claim on the airline’s own form. A refused claim can go to AviationADR.",
+      "values": {
+        "country": "CA",
+        "jurisdiction": "other",
+        "claim_url_verified": true,
+        "claim_url_by_type": {},
+        "contact_url": "https://www.aircanada.com/ca/en/aco/home/fly/customer-support.html",
+        "contact_url_verified": true,
+        "adr_scheme": "AviationADR",
+        "adr_scheme_url": "https://www.aviationadr.org.uk/",
+        "escalation": "AviationADR (aviationadr.org.uk) if it covers your route, or the national enforcement body in the country you flew from (the European Commission lists them at https://transport.ec.europa.eu/transport-themes/passenger-rights/air_en)",
+        "airline_time_limit": null,
+        "response_time": null,
+        "form_fields": []
+      },
+      "claim_url": "https://www.aircanada.com/customerrelations",
+      "sources": [
+        {
+          "name": "Air Canada: UK long delay and flight cancellation notice",
+          "url": "https://www.aircanada.com/content/dam/aircanada/portal/documents/PDF/en/passenger_rights/ACF519_UK_Eng-fr-(2022-09).pdf",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Air Canada: customer support",
+          "url": "https://www.aircanada.com/ca/en/aco/home/fly/customer-support.html",
+          "via": "live",
+          "checked": "2026-10-04"
+        },
+        {
+          "name": "Civil Aviation Authority: which airlines and airports are covered by ADR schemes",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "live",
+      "last_checked": "2026-09-30",
+      "version": "5d3eda3aca4b",
+      "page_url": "https://untap.money/open-data/rules#airline-AC"
+    },
+    {
+      "id": "tfl/incomplete-journey-window",
+      "category": "tfl",
+      "subject": "Incomplete journeys",
+      "code": null,
+      "rule_type": "tfl_refund",
+      "summary": "Claim a refund for an incomplete journey within 8 weeks of the date of travel.",
+      "values": {
+        "value": 8,
+        "unit": "weeks",
+        "stated_on": "https://untap.money/guides/tfl-refunds/incomplete-journey"
+      },
+      "claim_url": "https://tfl.gov.uk/fares/refunds/apply-for-incomplete-journey-refund",
+      "sources": [
+        {
+          "name": "Transport for London",
+          "url": "https://tfl.gov.uk/fares/refunds/apply-for-incomplete-journey-refund",
+          "via": "live",
+          "checked": "2026-10-05"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/tfl-refunds",
+      "verification": "live",
+      "last_checked": "2026-10-05",
+      "version": "59cadea1fc5d",
+      "page_url": "https://untap.money/open-data/rules#tfl-incomplete-journey-window"
+    },
+    {
+      "id": "tfl/incomplete-journey-amount",
+      "category": "tfl",
+      "subject": "Incomplete journeys",
+      "code": null,
+      "rule_type": "tfl_refund",
+      "summary": "The refund is the difference between the maximum fare charged and the fare for the journey you actually made.",
+      "values": {
+        "value": null,
+        "unit": null,
+        "stated_on": "https://untap.money/guides/tfl-refunds"
+      },
+      "claim_url": "https://tfl.gov.uk/fares/refunds/apply-for-incomplete-journey-refund",
+      "sources": [
+        {
+          "name": "Untap guide that states the rule",
+          "url": "https://untap.money/guides/tfl-refunds",
+          "via": "untap_guide",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "Transport for London page for this topic",
+          "url": "https://tfl.gov.uk/fares/refunds/apply-for-incomplete-journey-refund",
+          "via": "untap_guide",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/tfl-refunds",
+      "verification": "untap_guide",
+      "last_checked": "2026-09-30",
+      "version": "73f576f55e59",
+      "page_url": "https://untap.money/open-data/rules#tfl-incomplete-journey-amount"
+    },
+    {
+      "id": "tfl/incomplete-journey-wait",
+      "category": "tfl",
+      "subject": "Incomplete journeys",
+      "code": null,
+      "rule_type": "tfl_refund",
+      "summary": "Wait 48 hours before claiming, because TfL corrects many incomplete journeys automatically.",
+      "values": {
+        "value": 48,
+        "unit": "hours",
+        "stated_on": "https://untap.money/guides/tfl-refund-tools"
+      },
+      "claim_url": "https://tfl.gov.uk/fares/refunds/apply-for-incomplete-journey-refund",
+      "sources": [
+        {
+          "name": "Transport for London",
+          "url": "https://tfl.gov.uk/fares/refunds/apply-for-incomplete-journey-refund",
+          "via": "live",
+          "checked": "2026-10-05"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/tfl-refunds",
+      "verification": "live",
+      "last_checked": "2026-10-05",
+      "version": "0cc6a914dd38",
+      "page_url": "https://untap.money/open-data/rules#tfl-incomplete-journey-wait"
+    },
+    {
+      "id": "tfl/card-clash",
+      "category": "tfl",
+      "subject": "Incomplete journeys",
+      "code": null,
+      "rule_type": "tfl_refund",
+      "summary": "Using two different cards or devices for one journey is treated as an incomplete journey, with the same 8-week window and the same form.",
+      "values": {
+        "value": 8,
+        "unit": "weeks",
+        "stated_on": "https://untap.money/guides/tfl-refunds/card-clash"
+      },
+      "claim_url": "https://tfl.gov.uk/fares/refunds/apply-for-incomplete-journey-refund",
+      "sources": [
+        {
+          "name": "Transport for London",
+          "url": "https://tfl.gov.uk/fares/refunds/apply-for-incomplete-journey-refund",
+          "via": "live",
+          "checked": "2026-10-05"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/tfl-refunds",
+      "verification": "live",
+      "last_checked": "2026-10-05",
+      "version": "e16e2e8895bb",
+      "page_url": "https://untap.money/open-data/rules#tfl-card-clash"
+    },
+    {
+      "id": "tfl/hopper-window",
+      "category": "tfl",
+      "subject": "Hopper fare",
+      "code": null,
+      "rule_type": "tfl_refund",
+      "summary": "Bus and tram journeys started within 60 minutes of the tap that opens the Hopper window are free after the first fare. A charged tap inside that window is a missed Hopper fare.",
+      "values": {
+        "value": 60,
+        "unit": "minutes",
+        "stated_on": "https://untap.money/tfl-check"
+      },
+      "claim_url": "https://tfl.gov.uk/fares/find-fares/bus-and-tram-fares",
+      "sources": [
+        {
+          "name": "Transport for London",
+          "url": "https://tfl.gov.uk/fares/find-fares/bus-and-tram-fares",
+          "via": "live",
+          "checked": "2026-10-05"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/tfl-refunds",
+      "verification": "live",
+      "last_checked": "2026-10-05",
+      "version": "656fb63a3187",
+      "page_url": "https://untap.money/open-data/rules#tfl-hopper-window"
+    },
+    {
+      "id": "tfl/hopper-claim-window",
+      "category": "tfl",
+      "subject": "Hopper fare",
+      "code": null,
+      "rule_type": "tfl_refund",
+      "summary": "Untap treats a missed Hopper fare as claimable for the same 8 weeks as an incomplete journey.",
+      "values": {
+        "value": 8,
+        "unit": "weeks",
+        "stated_on": "https://untap.money/tfl-check"
+      },
+      "claim_url": null,
+      "sources": [
+        {
+          "name": "Untap page that applies the rule",
+          "url": "https://untap.money/tfl-check",
+          "via": "untap_practice",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/tfl-refunds",
+      "verification": "untap_practice",
+      "last_checked": "2026-09-30",
+      "version": "447067eff950",
+      "page_url": "https://untap.money/open-data/rules#tfl-hopper-claim-window"
+    },
+    {
+      "id": "tfl/capping-maximum-fares",
+      "category": "tfl",
+      "subject": "Capping",
+      "code": null,
+      "rule_type": "tfl_refund",
+      "summary": "Maximum fares do not count towards daily or weekly capping.",
+      "values": {
+        "value": null,
+        "unit": null,
+        "stated_on": "https://untap.money/guides/tfl-refunds/card-clash"
+      },
+      "claim_url": "https://tfl.gov.uk/fares/find-fares/capping",
+      "sources": [
+        {
+          "name": "Untap guide that states the rule",
+          "url": "https://untap.money/guides/tfl-refunds/card-clash",
+          "via": "untap_guide",
+          "checked": "2026-09-30"
+        },
+        {
+          "name": "Transport for London page for this topic",
+          "url": "https://tfl.gov.uk/fares/find-fares/capping",
+          "via": "untap_guide",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/tfl-refunds",
+      "verification": "untap_guide",
+      "last_checked": "2026-09-30",
+      "version": "e5d1a7a50878",
+      "page_url": "https://untap.money/open-data/rules#tfl-capping-maximum-fares"
+    },
+    {
+      "id": "tfl/capping-same-card",
+      "category": "tfl",
+      "subject": "Capping",
+      "code": null,
+      "rule_type": "tfl_refund",
+      "summary": "Daily and weekly capping only works when every tap is on the same card or device.",
+      "values": {
+        "value": null,
+        "unit": null,
+        "stated_on": "https://untap.money/guides/tfl-refunds/card-clash"
+      },
+      "claim_url": "https://tfl.gov.uk/fares/find-fares/capping",
+      "sources": [
+        {
+          "name": "Transport for London",
+          "url": "https://tfl.gov.uk/fares/find-fares/capping",
+          "via": "live",
+          "checked": "2026-10-05"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/tfl-refunds",
+      "verification": "live",
+      "last_checked": "2026-10-05",
+      "version": "814d8eed4342",
+      "page_url": "https://untap.money/open-data/rules#tfl-capping-same-card"
+    },
+    {
+      "id": "tfl/capping-absorbed",
+      "category": "tfl",
+      "subject": "Capping",
+      "code": null,
+      "rule_type": "tfl_refund",
+      "summary": "Where a statement shows a daily or weekly cap already absorbed an incomplete journey’s charge, Untap counts nothing extra as owed.",
+      "values": {
+        "value": null,
+        "unit": null,
+        "stated_on": "https://untap.money/tfl-check"
+      },
+      "claim_url": null,
+      "sources": [
+        {
+          "name": "Untap page that applies the rule",
+          "url": "https://untap.money/tfl-check",
+          "via": "untap_practice",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/tfl-refunds",
+      "verification": "untap_practice",
+      "last_checked": "2026-09-30",
+      "version": "fc2e99a226cd",
+      "page_url": "https://untap.money/open-data/rules#tfl-capping-absorbed"
+    },
+    {
+      "id": "tfl/service-delay-tube-dlr",
+      "category": "tfl",
+      "subject": "Service delays",
+      "code": null,
+      "rule_type": "tfl_refund",
+      "summary": "A service delay refund is available from 15 minutes late on London Underground and the DLR.",
+      "values": {
+        "value": 15,
+        "unit": "minutes",
+        "stated_on": "https://untap.money/guides/tfl-refunds/service-delay"
+      },
+      "claim_url": "https://tfl.gov.uk/fares/refunds/apply-for-a-service-delay-refund",
+      "sources": [
+        {
+          "name": "Transport for London",
+          "url": "https://tfl.gov.uk/fares/refunds/apply-for-a-service-delay-refund",
+          "via": "live",
+          "checked": "2026-10-05"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/tfl-refunds",
+      "verification": "live",
+      "last_checked": "2026-10-05",
+      "version": "a1302e0491f1",
+      "page_url": "https://untap.money/open-data/rules#tfl-service-delay-tube-dlr"
+    },
+    {
+      "id": "tfl/service-delay-overground-elizabeth",
+      "category": "tfl",
+      "subject": "Service delays",
+      "code": null,
+      "rule_type": "tfl_refund",
+      "summary": "A service delay refund is available from 30 minutes late on London Overground and the Elizabeth line.",
+      "values": {
+        "value": 30,
+        "unit": "minutes",
+        "stated_on": "https://untap.money/guides/tfl-refunds/service-delay"
+      },
+      "claim_url": "https://tfl.gov.uk/fares/refunds/apply-for-a-service-delay-refund",
+      "sources": [
+        {
+          "name": "Transport for London",
+          "url": "https://tfl.gov.uk/fares/refunds/apply-for-a-service-delay-refund",
+          "via": "live",
+          "checked": "2026-10-05"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/tfl-refunds",
+      "verification": "live",
+      "last_checked": "2026-10-05",
+      "version": "3c972456eed7",
+      "page_url": "https://untap.money/open-data/rules#tfl-service-delay-overground-elizabeth"
+    },
+    {
+      "id": "tfl/service-delay-bus-tram",
+      "category": "tfl",
+      "subject": "Service delays",
+      "code": null,
+      "rule_type": "tfl_refund",
+      "summary": "There is no service delay refund for a bus or tram.",
+      "values": {
+        "value": null,
+        "unit": null,
+        "stated_on": "https://untap.money/guides/tfl-refund-tools"
+      },
+      "claim_url": "https://tfl.gov.uk/fares/refunds/apply-for-a-service-delay-refund",
+      "sources": [
+        {
+          "name": "Transport for London",
+          "url": "https://tfl.gov.uk/fares/refunds/apply-for-a-service-delay-refund",
+          "via": "live",
+          "checked": "2026-10-05"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/tfl-refunds",
+      "verification": "live",
+      "last_checked": "2026-10-05",
+      "version": "8a6ba6bdefbd",
+      "page_url": "https://untap.money/open-data/rules#tfl-service-delay-bus-tram"
+    },
+    {
+      "id": "tfl/service-delay-amount",
+      "category": "tfl",
+      "subject": "Service delays",
+      "code": null,
+      "rule_type": "tfl_refund",
+      "summary": "A qualifying delay refunds one single fare for the delayed journey.",
+      "values": {
+        "value": null,
+        "unit": null,
+        "stated_on": "https://untap.money/guides/tfl-refunds/service-delay"
+      },
+      "claim_url": "https://tfl.gov.uk/fares/refunds/apply-for-a-service-delay-refund",
+      "sources": [
+        {
+          "name": "Transport for London",
+          "url": "https://tfl.gov.uk/fares/refunds/apply-for-a-service-delay-refund",
+          "via": "live",
+          "checked": "2026-10-05"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/tfl-refunds",
+      "verification": "live",
+      "last_checked": "2026-10-05",
+      "version": "bbe38142fcb7",
+      "page_url": "https://untap.money/open-data/rules#tfl-service-delay-amount"
+    },
+    {
+      "id": "tfl/service-delay-window",
+      "category": "tfl",
+      "subject": "Service delays",
+      "code": null,
+      "rule_type": "tfl_refund",
+      "summary": "Claim a service delay refund within 28 days of the delay.",
+      "values": {
+        "value": 28,
+        "unit": "days",
+        "stated_on": "https://untap.money/guides/tfl-refunds/service-delay"
+      },
+      "claim_url": "https://tfl.gov.uk/fares/refunds/apply-for-a-service-delay-refund",
+      "sources": [
+        {
+          "name": "Transport for London",
+          "url": "https://tfl.gov.uk/fares/refunds/apply-for-a-service-delay-refund",
+          "via": "live",
+          "checked": "2026-10-05"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/tfl-refunds",
+      "verification": "live",
+      "last_checked": "2026-10-05",
+      "version": "0cc8f85e68d1",
+      "page_url": "https://untap.money/open-data/rules#tfl-service-delay-window"
+    },
+    {
+      "id": "tfl/service-delay-exclusions",
+      "category": "tfl",
+      "subject": "Service delays",
+      "code": null,
+      "rule_type": "tfl_refund",
+      "summary": "No refund when the delay was outside TfL’s control: strikes, security alerts, bad weather, engineering works and customer incidents.",
+      "values": {
+        "value": null,
+        "unit": null,
+        "stated_on": "https://untap.money/guides/tfl-refunds/service-delay"
+      },
+      "claim_url": "https://tfl.gov.uk/fares/refunds/apply-for-a-service-delay-refund",
+      "sources": [
+        {
+          "name": "Transport for London",
+          "url": "https://tfl.gov.uk/fares/refunds/apply-for-a-service-delay-refund",
+          "via": "live",
+          "checked": "2026-10-05"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/tfl-refunds",
+      "verification": "live",
+      "last_checked": "2026-10-05",
+      "version": "bbe38142fcb7",
+      "page_url": "https://untap.money/open-data/rules#tfl-service-delay-exclusions"
+    },
+    {
+      "id": "tfl/unused-credit",
+      "category": "tfl",
+      "subject": "Unused credit",
+      "code": null,
+      "rule_type": "tfl_refund",
+      "summary": "Unused pay as you go credit or an unused ticket has no fixed deadline. Credit of £10 or less can be taken instantly at any Tube ticket machine.",
+      "values": {
+        "value": 10,
+        "unit": "GBP",
+        "stated_on": "https://untap.money/guides/tfl-refund-tools"
+      },
+      "claim_url": "https://tfl.gov.uk/fares/refunds/apply-for-unused-credit-or-ticket-refund",
+      "sources": [
+        {
+          "name": "Transport for London",
+          "url": "https://tfl.gov.uk/fares/refunds/apply-for-unused-credit-or-ticket-refund",
+          "via": "live",
+          "checked": "2026-10-05"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/tfl-refunds",
+      "verification": "live",
+      "last_checked": "2026-10-05",
+      "version": "899285341181",
+      "page_url": "https://untap.money/open-data/rules#tfl-unused-credit"
+    },
+    {
+      "id": "tfl/penalty-fare-appeal",
+      "category": "tfl",
+      "subject": "Revenue inspections",
+      "code": null,
+      "rule_type": "tfl_refund",
+      "summary": "Appeal a penalty fare within 21 days.",
+      "values": {
+        "value": 21,
+        "unit": "days",
+        "stated_on": "https://untap.money/guides/tfl-refunds/failed-revenue-inspection"
+      },
+      "claim_url": null,
+      "sources": [
+        {
+          "name": "Untap guide that states the rule",
+          "url": "https://untap.money/guides/tfl-refunds/failed-revenue-inspection",
+          "via": "untap_guide",
+          "checked": "2026-09-30"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/tfl-refunds",
+      "verification": "untap_guide",
+      "last_checked": "2026-09-30",
+      "version": "447c61027fd1",
+      "page_url": "https://untap.money/open-data/rules#tfl-penalty-fare-appeal"
+    },
+    {
+      "id": "scheme/uk261-short",
+      "category": "scheme",
+      "subject": "UK261 short band",
+      "code": "UK261",
+      "rule_type": "flight_compensation_band",
+      "summary": "£220 per passenger for a flight up to 1,500 km arriving 3 hours or more late, or cancelled. Half (£110) only where a cancelled flight’s replacement arrived less than 2 hours late.",
+      "values": {
+        "scheme": "UK261",
+        "currency": "GBP",
+        "band": "short",
+        "distance_over_km": 0,
+        "distance_up_to_km": 1500,
+        "delay_threshold_minutes": 180,
+        "amount": 220,
+        "reduced_amount": 110,
+        "long_haul_full_rate_minutes": null,
+        "reroute_half_rate_under_minutes": 120,
+        "intra_eu_capped_at_medium": false
+      },
+      "claim_url": null,
+      "sources": [
+        {
+          "name": "Regulation (EC) No 261/2004 retained in UK law, Article 7",
+          "url": "https://www.legislation.gov.uk/eur/2004/261/article/7",
+          "via": "statute",
+          "checked": "2026-10-05"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "statute",
+      "last_checked": "2026-10-05",
+      "version": "ec75791cabd5",
+      "page_url": "https://untap.money/open-data/rules#scheme-uk261-short"
+    },
+    {
+      "id": "scheme/uk261-medium",
+      "category": "scheme",
+      "subject": "UK261 medium band",
+      "code": "UK261",
+      "rule_type": "flight_compensation_band",
+      "summary": "£350 per passenger for a flight 1,500 to 3,500 km arriving 3 hours or more late, or cancelled. Half (£175) only where a cancelled flight’s replacement arrived less than 3 hours late.",
+      "values": {
+        "scheme": "UK261",
+        "currency": "GBP",
+        "band": "medium",
+        "distance_over_km": 1500,
+        "distance_up_to_km": 3500,
+        "delay_threshold_minutes": 180,
+        "amount": 350,
+        "reduced_amount": 175,
+        "long_haul_full_rate_minutes": null,
+        "reroute_half_rate_under_minutes": 180,
+        "intra_eu_capped_at_medium": false
+      },
+      "claim_url": null,
+      "sources": [
+        {
+          "name": "Regulation (EC) No 261/2004 retained in UK law, Article 7",
+          "url": "https://www.legislation.gov.uk/eur/2004/261/article/7",
+          "via": "statute",
+          "checked": "2026-10-05"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "statute",
+      "last_checked": "2026-10-05",
+      "version": "ce952992bb8a",
+      "page_url": "https://untap.money/open-data/rules#scheme-uk261-medium"
+    },
+    {
+      "id": "scheme/uk261-long",
+      "category": "scheme",
+      "subject": "UK261 long band",
+      "code": "UK261",
+      "rule_type": "flight_compensation_band",
+      "summary": "£520 per passenger for a flight over 3,500 km arriving 3 hours or more late, or cancelled. Half (£260) for an arrival delay of 3 to 4 hours.",
+      "values": {
+        "scheme": "UK261",
+        "currency": "GBP",
+        "band": "long",
+        "distance_over_km": 3500,
+        "distance_up_to_km": null,
+        "delay_threshold_minutes": 180,
+        "amount": 520,
+        "reduced_amount": 260,
+        "long_haul_full_rate_minutes": 240,
+        "reroute_half_rate_under_minutes": 240,
+        "intra_eu_capped_at_medium": false
+      },
+      "claim_url": null,
+      "sources": [
+        {
+          "name": "Regulation (EC) No 261/2004 retained in UK law, Article 7",
+          "url": "https://www.legislation.gov.uk/eur/2004/261/article/7",
+          "via": "statute",
+          "checked": "2026-10-05"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "statute",
+      "last_checked": "2026-10-05",
+      "version": "0893c085b400",
+      "page_url": "https://untap.money/open-data/rules#scheme-uk261-long"
+    },
+    {
+      "id": "scheme/eu261-short",
+      "category": "scheme",
+      "subject": "EU261 short band",
+      "code": "EU261",
+      "rule_type": "flight_compensation_band",
+      "summary": "€250 per passenger for a flight up to 1,500 km arriving 3 hours or more late, or cancelled. Half (€125) only where a cancelled flight’s replacement arrived less than 2 hours late.",
+      "values": {
+        "scheme": "EU261",
+        "currency": "EUR",
+        "band": "short",
+        "distance_over_km": 0,
+        "distance_up_to_km": 1500,
+        "delay_threshold_minutes": 180,
+        "amount": 250,
+        "reduced_amount": 125,
+        "long_haul_full_rate_minutes": null,
+        "reroute_half_rate_under_minutes": 120,
+        "intra_eu_capped_at_medium": false
+      },
+      "claim_url": null,
+      "sources": [
+        {
+          "name": "Regulation (EC) No 261/2004 as adopted by the EU, Article 7",
+          "url": "https://www.legislation.gov.uk/eur/2004/261/article/7/adopted",
+          "via": "statute",
+          "checked": "2026-10-05"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "statute",
+      "last_checked": "2026-10-05",
+      "version": "9ce1093cd943",
+      "page_url": "https://untap.money/open-data/rules#scheme-eu261-short"
+    },
+    {
+      "id": "scheme/eu261-medium",
+      "category": "scheme",
+      "subject": "EU261 medium band",
+      "code": "EU261",
+      "rule_type": "flight_compensation_band",
+      "summary": "€400 per passenger for a flight 1,500 to 3,500 km arriving 3 hours or more late, or cancelled. Half (€200) only where a cancelled flight’s replacement arrived less than 3 hours late. A flight between two EU airports of more than 1,500 km is paid at this band, however long it is.",
+      "values": {
+        "scheme": "EU261",
+        "currency": "EUR",
+        "band": "medium",
+        "distance_over_km": 1500,
+        "distance_up_to_km": 3500,
+        "delay_threshold_minutes": 180,
+        "amount": 400,
+        "reduced_amount": 200,
+        "long_haul_full_rate_minutes": null,
+        "reroute_half_rate_under_minutes": 180,
+        "intra_eu_capped_at_medium": false
+      },
+      "claim_url": null,
+      "sources": [
+        {
+          "name": "Regulation (EC) No 261/2004 as adopted by the EU, Article 7",
+          "url": "https://www.legislation.gov.uk/eur/2004/261/article/7/adopted",
+          "via": "statute",
+          "checked": "2026-10-05"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "statute",
+      "last_checked": "2026-10-05",
+      "version": "2a8467174bda",
+      "page_url": "https://untap.money/open-data/rules#scheme-eu261-medium"
+    },
+    {
+      "id": "scheme/eu261-long",
+      "category": "scheme",
+      "subject": "EU261 long band",
+      "code": "EU261",
+      "rule_type": "flight_compensation_band",
+      "summary": "€600 per passenger for a flight over 3,500 km arriving 3 hours or more late, or cancelled. Half (€300) for an arrival delay of 3 to 4 hours. Not for a flight between two EU airports, which stays at the medium band.",
+      "values": {
+        "scheme": "EU261",
+        "currency": "EUR",
+        "band": "long",
+        "distance_over_km": 3500,
+        "distance_up_to_km": null,
+        "delay_threshold_minutes": 180,
+        "amount": 600,
+        "reduced_amount": 300,
+        "long_haul_full_rate_minutes": 240,
+        "reroute_half_rate_under_minutes": 240,
+        "intra_eu_capped_at_medium": true
+      },
+      "claim_url": null,
+      "sources": [
+        {
+          "name": "Regulation (EC) No 261/2004 as adopted by the EU, Article 7",
+          "url": "https://www.legislation.gov.uk/eur/2004/261/article/7/adopted",
+          "via": "statute",
+          "checked": "2026-10-05"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "statute",
+      "last_checked": "2026-10-05",
+      "version": "94c8379f6a9e",
+      "page_url": "https://untap.money/open-data/rules#scheme-eu261-long"
+    },
+    {
+      "id": "scheme/rail-ombudsman",
+      "category": "scheme",
+      "subject": "Rail Ombudsman",
+      "code": null,
+      "rule_type": "escalation_or_time_limit",
+      "summary": "Once 40 working days have passed since complaining to the operator, or sooner on a final response (a deadlock letter, email or text) the person is unhappy with. Delay and cancellation disputes are in scope; it is free, and its decision binds the operator if the person accepts it. Within 12 months of the operator’s final response, unless circumstances are exceptional.",
+      "values": {
+        "applies_to": "rail",
+        "when": "Once 40 working days have passed since complaining to the operator, or sooner on a final response (a deadlock letter, email or text) the person is unhappy with. Delay and cancellation disputes are in scope; it is free, and its decision binds the operator if the person accepts it.",
+        "time_limit": "Within 12 months of the operator’s final response, unless circumstances are exceptional."
+      },
+      "claim_url": "https://www.railombudsman.org",
+      "sources": [
+        {
+          "name": "Rail Ombudsman: frequently asked questions",
+          "url": "https://www.railombudsman.org/en/faq",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay",
+      "verification": "live",
+      "last_checked": "2026-10-04",
+      "version": "b8ea58670e4f",
+      "page_url": "https://untap.money/open-data/rules#scheme-rail-ombudsman"
+    },
+    {
+      "id": "scheme/rail-claim-handling",
+      "category": "scheme",
+      "subject": "Rail delay claim handling",
+      "code": null,
+      "rule_type": "escalation_or_time_limit",
+      "summary": "Under the rail regulator’s Delay Compensation Code of Practice, operators process a correctly completed claim within 20 working days, tell the passenger within 5 working days if evidence is missing, and give written reasons and a way to contest a refusal.",
+      "values": {
+        "applies_to": "rail",
+        "processing_working_days": 20,
+        "missing_evidence_notice_working_days": 5
+      },
+      "claim_url": null,
+      "sources": [
+        {
+          "name": "ORR Delay Compensation Code of Practice, paragraphs 4.1 to 4.6",
+          "url": "https://www.orr.gov.uk/sites/default/files/2022-03/delay-compensation-code-of-practice.pdf",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay",
+      "verification": "live",
+      "last_checked": "2026-10-04",
+      "version": "65efd178c269",
+      "page_url": "https://untap.money/open-data/rules#scheme-rail-claim-handling"
+    },
+    {
+      "id": "scheme/rail-claim-deadline",
+      "category": "scheme",
+      "subject": "Rail claim deadline",
+      "code": null,
+      "rule_type": "escalation_or_time_limit",
+      "summary": "Compensation is claimed from the train company responsible for the delay. A claim sent to any train company whose trains were used is passed on to the right one. Claims go in within 28 days of finishing the journey.",
+      "values": {
+        "applies_to": "rail",
+        "claim_deadline_days": 28
+      },
+      "claim_url": null,
+      "sources": [
+        {
+          "name": "National Rail Conditions of Travel (from 30 July 2026), Conditions 32 and 33",
+          "url": "https://www.nationalrail.co.uk/NRCOT/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/train-delay-repay",
+      "verification": "live",
+      "last_checked": "2026-10-04",
+      "version": "ce17a7ecdfa2",
+      "page_url": "https://untap.money/open-data/rules#scheme-rail-claim-deadline"
+    },
+    {
+      "id": "scheme/airline-final-response",
+      "category": "scheme",
+      "subject": "Airline final response",
+      "code": null,
+      "rule_type": "escalation_or_time_limit",
+      "summary": "If the airline refuses, or has not given a final answer within 8 weeks of the written claim, the case can go to the airline’s dispute scheme or, if it has none, to the CAA.",
+      "values": {
+        "applies_to": "flights",
+        "weeks_before_escalation": 8
+      },
+      "claim_url": null,
+      "sources": [
+        {
+          "name": "Civil Aviation Authority: alternative dispute resolution",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/alternative-dispute-resolution/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "live",
+      "last_checked": "2026-10-04",
+      "version": "2d4fb0f548e8",
+      "page_url": "https://untap.money/open-data/rules#scheme-airline-final-response"
+    },
+    {
+      "id": "scheme/aviation-adr",
+      "category": "scheme",
+      "subject": "AviationADR",
+      "code": null,
+      "rule_type": "escalation_or_time_limit",
+      "summary": "After a written complaint to the airline through its own procedure, and either its final written response (deadlock letter) or 8 weeks without one. Free for passengers; the decision binds the airline once the passenger accepts it. Within 12 months of the airline’s final response, or of the last contact if it never replied.",
+      "values": {
+        "applies_to": "flights",
+        "when": "After a written complaint to the airline through its own procedure, and either its final written response (deadlock letter) or 8 weeks without one. Free for passengers; the decision binds the airline once the passenger accepts it.",
+        "time_limit": "Within 12 months of the airline’s final response, or of the last contact if it never replied."
+      },
+      "claim_url": "https://www.aviationadr.org.uk/",
+      "sources": [
+        {
+          "name": "AviationADR: what to do before you apply",
+          "url": "https://www.aviationadr.org.uk/complaints-process/what-to-do-before/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-tools",
+      "verification": "live",
+      "last_checked": "2026-10-04",
+      "version": "6c749369792b",
+      "page_url": "https://untap.money/open-data/rules#scheme-aviation-adr"
+    },
+    {
+      "id": "scheme/cedr",
+      "category": "scheme",
+      "subject": "CEDR aviation adjudication",
+      "code": null,
+      "rule_type": "escalation_or_time_limit",
+      "summary": "Once 8 weeks have passed since the first complaint without a settlement, or the airline says it cannot resolve it, or it could not be reached despite reasonable efforts. Free for passengers; the decision binds the airline once the passenger accepts it. Within 12 months of the deadlock notice, or of the last attempt to contact the airline if there was none.",
+      "values": {
+        "applies_to": "flights",
+        "when": "Once 8 weeks have passed since the first complaint without a settlement, or the airline says it cannot resolve it, or it could not be reached despite reasonable efforts. Free for passengers; the decision binds the airline once the passenger accepts it.",
+        "time_limit": "Within 12 months of the deadlock notice, or of the last attempt to contact the airline if there was none."
+      },
+      "claim_url": "https://www.cedr-assist.com/consumer/aviation/overview/",
+      "sources": [
+        {
+          "name": "CEDR Aviation Adjudication Scheme Rules, March 2026",
+          "url": "https://www.cedr-assist.com/hubfs/Consumer%20Documents/Aviation/CEDR%20Aviation%20Adjudication%20Scheme%20Rules%20-%20March%202026.pdf",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-tools",
+      "verification": "live",
+      "last_checked": "2026-10-04",
+      "version": "8dc04486ddac",
+      "page_url": "https://untap.money/open-data/rules#scheme-cedr"
+    },
+    {
+      "id": "scheme/caa-pact",
+      "category": "scheme",
+      "subject": "Civil Aviation Authority complaints team (PACT)",
+      "code": null,
+      "rule_type": "escalation_or_time_limit",
+      "summary": "For a UK261 claim on an airline in no approved dispute scheme, after a written complaint and an unsatisfactory answer or 8 weeks without one. PACT gives a view and raises it with the airline but cannot impose a decision. PACT does not take a complaint with less than a year left to go to court.",
+      "values": {
+        "applies_to": "flights",
+        "when": "For a UK261 claim on an airline in no approved dispute scheme, after a written complaint and an unsatisfactory answer or 8 weeks without one. PACT gives a view and raises it with the airline but cannot impose a decision.",
+        "time_limit": "PACT does not take a complaint with less than a year left to go to court."
+      },
+      "claim_url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/how-the-caa-can-help/",
+      "sources": [
+        {
+          "name": "Civil Aviation Authority: how the CAA can help (PACT)",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/how-the-caa-can-help/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-tools",
+      "verification": "live",
+      "last_checked": "2026-10-04",
+      "version": "f921e4bed233",
+      "page_url": "https://untap.money/open-data/rules#scheme-caa-pact"
+    },
+    {
+      "id": "scheme/uk261-court-time-limit",
+      "category": "scheme",
+      "subject": "UK261 court time limit",
+      "code": null,
+      "rule_type": "escalation_or_time_limit",
+      "summary": "A UK261 claim can be taken to court within six years of the flight in England, Wales and Northern Ireland, and five years in Scotland.",
+      "values": {
+        "applies_to": "flights",
+        "years_england_wales_northern_ireland": 6,
+        "years_scotland": 5
+      },
+      "claim_url": null,
+      "sources": [
+        {
+          "name": "Civil Aviation Authority: how the CAA can help (PACT)",
+          "url": "https://www.caa.co.uk/air-passengers/travel-problems-and-rights/travel-complaints/how-the-caa-can-help/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "live",
+      "last_checked": "2026-10-04",
+      "version": "00ddea7a5d47",
+      "page_url": "https://untap.money/open-data/rules#scheme-uk261-court-time-limit"
+    },
+    {
+      "id": "scheme/eu261-court-time-limit",
+      "category": "scheme",
+      "subject": "EU261 court time limit",
+      "code": null,
+      "rule_type": "escalation_or_time_limit",
+      "summary": "EU261 sets no time limit of its own: the period is set by the national law of the country where the claim is brought (Cuadrench Moré v KLM, C-139/11). Untap does not hold a table of those periods, so no date is given. A dispute scheme can have its own time limit.",
+      "values": {
+        "applies_to": "flights",
+        "years": null
+      },
+      "claim_url": null,
+      "sources": [
+        {
+          "name": "Cuadrench Moré v KLM, Case C-139/11 (CJEU, 22 November 2012)",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62011CJ0139",
+          "via": "statute",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/flight-compensation-uk261",
+      "verification": "statute",
+      "last_checked": "2026-10-04",
+      "version": "d7b8d72112cb",
+      "page_url": "https://untap.money/open-data/rules#scheme-eu261-court-time-limit"
+    },
+    {
+      "id": "scheme/london-travelwatch",
+      "category": "scheme",
+      "subject": "London TravelWatch",
+      "code": null,
+      "rule_type": "escalation_or_time_limit",
+      "summary": "After complaining to TfL and asking for a manager’s review, if the outcome or the handling is still not right. It expects TfL to have had 20 working days to reply and cannot force TfL to agree. London Overground and Elizabeth line complaints go to the Rail Ombudsman instead. No fixed limit, but complaints have to be raised within a reasonable time; London TravelWatch notes most come within six weeks of the problem.",
+      "values": {
+        "applies_to": "tfl",
+        "when": "After complaining to TfL and asking for a manager’s review, if the outcome or the handling is still not right. It expects TfL to have had 20 working days to reply and cannot force TfL to agree. London Overground and Elizabeth line complaints go to the Rail Ombudsman instead.",
+        "time_limit": "No fixed limit, but complaints have to be raised within a reasonable time; London TravelWatch notes most come within six weeks of the problem."
+      },
+      "claim_url": "https://www.londontravelwatch.org.uk",
+      "sources": [
+        {
+          "name": "London TravelWatch: appealing your complaint",
+          "url": "https://www.londontravelwatch.org.uk/complaints-and-appeals/appealing-your-complaint/",
+          "via": "live",
+          "checked": "2026-10-04"
+        }
+      ],
+      "guide_url": "https://untap.money/guides/tfl-refunds",
+      "verification": "live",
+      "last_checked": "2026-10-04",
+      "version": "552de13e337c",
+      "page_url": "https://untap.money/open-data/rules#scheme-london-travelwatch"
+    }
+  ]
+}

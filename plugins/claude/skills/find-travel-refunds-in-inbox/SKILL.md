@@ -1,6 +1,6 @@
 ---
 name: find-travel-refunds-in-inbox
-description: Searches an inbox for UK train, flight and TfL refunds the person may be owed, then checks them with Untap. Use for find refunds, money I'm owed, check my emails for compensation, travel refunds.
+description: "Searches an inbox for UK train, flight and TfL refunds the person may be owed, then checks them with Untap. Use for find refunds, money I'm owed, check my emails for compensation, travel refunds."
 metadata:
   version: "1.0.0"
   publisher: "Untap (untap.money)"

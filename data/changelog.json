@@ -1,0 +1,136 @@
+{
+  "name": "Untap rules change log",
+  "url": "https://untap.money/open-data/changelog",
+  "licence": "https://creativecommons.org/licenses/by/4.0/",
+  "changes": [
+    {
+      "date": "2026-10-05",
+      "datasets": [
+        "tfl-refund-rules"
+      ],
+      "summary": "Each TfL rule now says how it was checked. Twelve were read on Transport for London’s own pages on 5 October 2026, and the Hopper fare rule now links to TfL’s bus and tram fares page. The other five are stated on Untap’s guides or describe how Untap applies a rule, and are marked that way. No rule changed.",
+      "commit": "d644076"
+    },
+    {
+      "date": "2026-10-05",
+      "datasets": [
+        "flight-compensation-bands"
+      ],
+      "summary": "The UK261 and EU261 amounts were read again on the published text of Article 7 for both versions of the regulation. No amount changed.",
+      "commit": "d644076"
+    },
+    {
+      "date": "2026-10-04",
+      "datasets": [
+        "airline-claim-routes",
+        "claim-schemes"
+      ],
+      "summary": "Added the claim page, contact page, who may claim and response time for 34 airlines, each read on the airline’s own page or an archived copy of it. A claim page seen only in search results is marked unverified. Added the escalation routes with their time limits: the Rail Ombudsman, AviationADR, CEDR, the Civil Aviation Authority’s complaints team, London TravelWatch and the court time limits for UK261 and EU261.",
+      "commit": "38d6a46"
+    },
+    {
+      "date": "2026-09-30",
+      "datasets": [
+        "airline-claim-routes"
+      ],
+      "summary": "Every airline’s dispute scheme was rechecked against the Civil Aviation Authority’s list and both schemes’ own member lists, and corrected where it differed, including easyJet, Ryanair and TUI. An airline in no scheme now sends a refused UK261 claim to the Civil Aviation Authority’s complaints team.",
+      "commit": "495e70f"
+    },
+    {
+      "date": "2026-09-30",
+      "datasets": [
+        "flight-compensation-bands"
+      ],
+      "summary": "Under EU261, a flight between two EU airports of more than 1,500 km is now paid at the middle band, €400, even when it is longer than 3,500 km, as Article 7(1)(b) says. Such a flight used to show €600, or €300 for a delay of 3 to 4 hours. UK261 dropped this rule, so UK flights, including UK to EU, are unchanged. A cancelled flight whose replacement arrived less than 2, 3 or 4 hours late, depending on distance, now shows the half rate the airline is allowed to pay.",
+      "commit": "495e70f"
+    },
+    {
+      "date": "2026-09-30",
+      "datasets": [
+        "delay-repay-operators"
+      ],
+      "summary": "Added the 120-minute tier. On a return ticket, one direction delayed 120 minutes or more now pays the whole return fare on the 21 operators whose rules say so; Lumo and Hull Trains stop at half the return. Payout rules were rechecked against each operator’s own pages, or an archived copy where the live page was blocked. West Midlands Railway and London Northwestern could not be read, so the national scheme is used. Five claim form links were updated.",
+      "commit": "e2707a5"
+    },
+    {
+      "date": "2026-09-30",
+      "datasets": [
+        "tfl-refund-rules"
+      ],
+      "summary": "The Hopper fare window is now measured from the tap that opens it, not from the most recent tap. A paid third bus more than an hour after the first is no longer flagged as a missed Hopper fare.",
+      "commit": "74974a0"
+    },
+    {
+      "date": "2026-08-16",
+      "datasets": [
+        "water-surface-drainage-charges"
+      ],
+      "summary": "Added the 2026-27 surface water drainage charges and backdating rules for the eleven water and sewerage companies in England and Wales, each read from the company’s own charges scheme.",
+      "commit": "cb784bf"
+    },
+    {
+      "date": "2026-07-31",
+      "datasets": [
+        "delay-repay-operators"
+      ],
+      "summary": "Rechecked the automatic compensation status of seven operators against their own pages. East Midlands Railway now shows no automatic scheme; Transport for Wales, West Midlands Railway, London Northwestern, Lumo and Caledonian Sleeper show one-click schemes; Chiltern stays unconfirmed.",
+      "commit": "54f2f63"
+    },
+    {
+      "date": "2026-07-31",
+      "datasets": [
+        "delay-repay-operators"
+      ],
+      "summary": "Added whether each operator pays automatically, asks you to confirm a pre-filled claim, or needs a manual claim, and which tickets each scheme covers.",
+      "commit": "1d2ac63"
+    },
+    {
+      "date": "2026-05-24",
+      "datasets": [
+        "flight-compensation-bands"
+      ],
+      "summary": "Cancellations now take account of how much notice the airline gave. With 15 or more calendar days’ notice nothing is owed. With 7 to 14 days, nothing is owed if the airline offered a replacement that left no more than 2 hours early and arrived less than 4 hours late. With under 7 days, the limits are 1 hour early and 2 hours late.",
+      "commit": "9adab78"
+    },
+    {
+      "date": "2026-05-14",
+      "datasets": [
+        "tfl-refund-rules"
+      ],
+      "summary": "An incomplete journey that a daily or weekly cap has already absorbed is no longer counted as money owed, and refunds TfL has already credited are shown separately.",
+      "commit": "41da53e"
+    },
+    {
+      "date": "2026-04-26",
+      "datasets": [
+        "delay-repay-operators"
+      ],
+      "summary": "Delay Repay is now worked out for each journey separately against the single fare, which is half the price of a return. The earlier rule that paid the whole ticket price for delays of 120 minutes or more was removed, so every tier now pays up to 100% of the single fare.",
+      "commit": "557cee3"
+    },
+    {
+      "date": "2026-04-15",
+      "datasets": [
+        "tfl-refund-rules"
+      ],
+      "summary": "First version: incomplete journeys and missed Hopper fares claimable for 8 weeks, with the Hopper window set at 60 minutes.",
+      "commit": "a5c6569"
+    },
+    {
+      "date": "2026-04-15",
+      "datasets": [
+        "flight-compensation-bands"
+      ],
+      "summary": "First version: £220, £350 and £520 under UK261 and €250, €400 and €600 under EU261 by distance, from 3 hours late on arrival, with long-haul delays of 3 to 4 hours paid at half.",
+      "commit": "a5c6569"
+    },
+    {
+      "date": "2026-04-15",
+      "datasets": [
+        "delay-repay-operators"
+      ],
+      "summary": "First version: 23 train operators, each on a 15-minute or 30-minute scheme, with a 28-day claim deadline and a link to its claim form.",
+      "commit": "a5c6569"
+    }
+  ]
+}

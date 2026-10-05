@@ -1,7 +1,7 @@
 {
   "name": "untap",
   "displayName": "Untap",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Check whether you are owed money for a delayed train, a disrupted flight, a TfL overcharge or a UK parking ticket, and get the operator's own claim link.",
   "author": {
     "name": "Andrey Chekunin",

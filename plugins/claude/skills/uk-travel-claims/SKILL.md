@@ -1,6 +1,6 @@
 ---
 name: uk-travel-claims
-description: Checks UK travel compensation and refunds with Untap: Delay Repay for late or cancelled trains, UK261 or EU261 flight delays, cancellations, denied boarding, TfL incomplete journeys, maximum fares.
+description: "Checks UK travel compensation and refunds with Untap: Delay Repay for late or cancelled trains, UK261 or EU261 flight delays, cancellations, denied boarding, TfL incomplete journeys, maximum fares."
 metadata:
   version: "1.0.0"
   publisher: "Untap (untap.money)"

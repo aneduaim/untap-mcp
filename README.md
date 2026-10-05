@@ -10,7 +10,7 @@ Every package here is a thin wrapper around the same hosted MCP server, plus Unt
 https://untap.money/api/mcp
 ```
 
-Tools live on the server, so they update in every assistant without a new package. Version 1.3.0.
+Tools live on the server, so they update in every assistant without a new package. Version 1.3.1.
 
 ## Install
 
@@ -52,6 +52,7 @@ Setup guides for each assistant: [untap.money/connect](https://untap.money/conne
 | `gemini-extension.json`, `GEMINI.md` | Gemini CLI extension manifest and context file | Gemini CLI, geminicli.com/extensions |
 | `server.json` | Official MCP Registry entry | registry.modelcontextprotocol.io |
 | `smithery.yaml` | Smithery listing | smithery.ai |
+| `data/` | UK claims rules dataset (JSON, CSV and change log), CC BY 4.0, a copy of https://untap.money/open-data/rules | anyone |
 
 These files are generated from one source in Untap's main repository. Please open an issue rather than a pull request against a package.
 
@@ -80,7 +81,7 @@ These files are generated from one source in Untap's main repository. Please ope
 | `list_savings` | List the person’s refund opportunities | Yes |
 | `delete_my_data` | Delete all my Untap data | Yes |
 
-This table was generated from the server's source for version 1.3.0. The live list is always the server's own `tools/list` at `https://untap.money/api/mcp`. 7 of 20 tools work without signing in.
+This table was generated from the server's source for version 1.3.1. The live list is always the server's own `tools/list` at `https://untap.money/api/mcp`. 7 of 20 tools work without signing in.
 
 ## Skills
 

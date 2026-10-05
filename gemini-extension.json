@@ -1,6 +1,6 @@
 {
   "name": "untap",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Check UK Delay Repay, UK261 and EU261 flight compensation and TfL refunds, then get the exact steps to claim. No account needed.",
   "contextFileName": "GEMINI.md",
   "mcpServers": {
