@@ -4,6 +4,22 @@
   "licence": "https://creativecommons.org/licenses/by/4.0/",
   "changes": [
     {
+      "date": "2026-10-06",
+      "datasets": [
+        "airline-claim-routes"
+      ],
+      "summary": "Air Canada’s claim link now goes straight to its contact portal. The old Customer Relations address on aircanada.com redirects there, so the place to claim is the same: the Flight Disruption (claim only) topic.",
+      "commit": "01e06d2"
+    },
+    {
+      "date": "2026-10-05",
+      "datasets": [
+        "delay-repay-operators"
+      ],
+      "summary": "Season tickets are now paid a share of one journey, not a share of the season’s price. The price is divided by the number of journeys the operator says the season covers (an annual season 464, a monthly 40, a weekly 10, a flexi season 16), read on 14 operators’ own pages. A £4,000 annual season 35 minutes late on Southern or Avanti now shows £4.31, where it showed £2,000. Where the season length or the operator’s journey count is not known, no amount is shown.",
+      "commit": "1ea96c0"
+    },
+    {
       "date": "2026-10-05",
       "datasets": [
         "tfl-refund-rules"

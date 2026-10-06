@@ -10,7 +10,7 @@ Every package here is a thin wrapper around the same hosted MCP server, plus Unt
 https://untap.money/api/mcp
 ```
 
-Tools live on the server, so they update in every assistant without a new package. Version 1.3.1.
+Tools live on the server, so they update in every assistant without a new package. Version 1.3.2.
 
 ## Install
 
@@ -81,7 +81,7 @@ These files are generated from one source in Untap's main repository. Please ope
 | `list_savings` | List the person’s refund opportunities | Yes |
 | `delete_my_data` | Delete all my Untap data | Yes |
 
-This table was generated from the server's source for version 1.3.1. The live list is always the server's own `tools/list` at `https://untap.money/api/mcp`. 7 of 20 tools work without signing in.
+This table was generated from the server's source for version 1.3.2. The live list is always the server's own `tools/list` at `https://untap.money/api/mcp`. 7 of 20 tools work without signing in.
 
 ## Skills
 

@@ -2,16 +2,16 @@
   "name": "Untap UK claims rules: Delay Repay, UK261 and EU261, TfL refunds and dispute schemes",
   "description": "Every rule Untap applies to UK train delay, flight delay and Transport for London refund claims, one record per rule: Delay Repay thresholds, payout tiers and claim forms for each train operator, where to claim from each airline and its dispute scheme, TfL refund windows and thresholds, and the UK261 and EU261 compensation bands, ombudsmen and time limits. Each record names its sources, the date each was last checked and a version that changes when the rule does.",
   "url": "https://untap.money/open-data/rules",
-  "version": "2026-10-05.65c95941",
+  "version": "2026-10-06.18338e10",
   "date_published": "2026-10-05",
-  "last_changed": "2026-10-05",
+  "last_changed": "2026-10-06",
   "licence": {
     "name": "Creative Commons Attribution 4.0 International",
     "short": "CC BY 4.0",
     "url": "https://creativecommons.org/licenses/by/4.0/"
   },
   "attribution": "Untap",
-  "citation": "Untap (2026). Untap UK claims rules: Delay Repay, UK261 and EU261, TfL refunds and dispute schemes. Version 2026-10-05.65c95941. Licensed under CC BY 4.0. https://untap.money/open-data/rules",
+  "citation": "Untap (2026). Untap UK claims rules: Delay Repay, UK261 and EU261, TfL refunds and dispute schemes. Version 2026-10-06.18338e10. Licensed under CC BY 4.0. https://untap.money/open-data/rules",
   "publisher": {
     "name": "Untap",
     "url": "https://untap.money",
@@ -63,7 +63,7 @@
       "subject": "Avanti West Coast",
       "code": "VT",
       "rule_type": "delay_repay",
-      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. A season ticket is paid a share of one journey: the price divided by 10 for weekly, 40 for monthly, 120 for quarterly, 240 for six-monthly, 464 for annual. Claim within 28 days on the operator’s own form.",
       "values": {
         "scheme": "DR15",
         "threshold_minutes": 15,
@@ -101,6 +101,18 @@
         ],
         "whole_return_fare_from_minutes": 120,
         "cancellation_percent_of_single_fare": 100,
+        "season_tickets": {
+          "journeys_per_season": {
+            "weekly": 10,
+            "monthly": 40,
+            "quarterly": 120,
+            "six_monthly": 240,
+            "annual": 464
+          },
+          "at_120_minutes": "one_journey",
+          "checked": "2026-10-05",
+          "note": "Annual 464, six-month 240, quarterly 120, monthly 40, weekly 10 single journeys. The season column pays 100% at 120 minutes or more, the same as 60 to 119. No flexi season listed"
+        },
         "claim_deadline_days": 28,
         "automatic_compensation": "one-click",
         "automatic_scope": "Advance tickets bought directly from Avanti, opt-in",
@@ -126,7 +138,7 @@
       "guide_url": "https://untap.money/guides/train-delay-repay/avanti-west-coast",
       "verification": "live",
       "last_checked": "2026-09-30",
-      "version": "ba672f76a4ca",
+      "version": "b98d3bbd40cc",
       "page_url": "https://untap.money/open-data/rules#rail_operator-VT"
     },
     {
@@ -135,7 +147,7 @@
       "subject": "c2c",
       "code": "CC",
       "rule_type": "delay_repay",
-      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. A season ticket is paid a share of one journey value; Untap has not read this operator’s journey counts. Claim within 28 days on the operator’s own form.",
       "values": {
         "scheme": "DR15",
         "threshold_minutes": 15,
@@ -173,6 +185,7 @@
         ],
         "whole_return_fare_from_minutes": 120,
         "cancellation_percent_of_single_fare": 100,
+        "season_tickets": null,
         "claim_deadline_days": 28,
         "automatic_compensation": "automatic",
         "automatic_scope": "c2c Smartcard only",
@@ -198,7 +211,7 @@
       "guide_url": "https://untap.money/guides/train-delay-repay/c2c",
       "verification": "live",
       "last_checked": "2026-09-30",
-      "version": "b65bb290b7a6",
+      "version": "e1cb460b2381",
       "page_url": "https://untap.money/open-data/rules#rail_operator-CC"
     },
     {
@@ -207,7 +220,7 @@
       "subject": "Chiltern Railways",
       "code": "CH",
       "rule_type": "delay_repay",
-      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. A season ticket is paid a share of one journey: the price divided by 10 for weekly, 40 for monthly, 120 for quarterly, 464 for annual, 16 for flexi. Claim within 28 days on the operator’s own form.",
       "values": {
         "scheme": "DR15",
         "threshold_minutes": 15,
@@ -245,6 +258,18 @@
         ],
         "whole_return_fare_from_minutes": 120,
         "cancellation_percent_of_single_fare": 100,
+        "season_tickets": {
+          "journeys_per_season": {
+            "weekly": 10,
+            "monthly": 40,
+            "quarterly": 120,
+            "annual": 464,
+            "flexi": 16
+          },
+          "at_120_minutes": "two_journeys",
+          "checked": "2026-10-05",
+          "note": "Annual 1/464, quarterly 1/120, monthly 1/40, flexi 1/16, weekly 1/10 of the price. 120 minutes or longer: 100% of return journey cost"
+        },
         "claim_deadline_days": 28,
         "automatic_compensation": "unverified",
         "automatic_scope": null,
@@ -270,7 +295,7 @@
       "guide_url": "https://untap.money/guides/train-delay-repay/chiltern-railways",
       "verification": "live",
       "last_checked": "2026-09-30",
-      "version": "edaa677c754a",
+      "version": "d7b7e9fc7d2e",
       "page_url": "https://untap.money/open-data/rules#rail_operator-CH"
     },
     {
@@ -279,7 +304,7 @@
       "subject": "East Midlands Railway",
       "code": "EM",
       "rule_type": "delay_repay",
-      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. A season ticket is paid a share of one journey: the price divided by 10 for weekly, 40 for monthly, 464 for annual. Claim within 28 days on the operator’s own form.",
       "values": {
         "scheme": "DR15",
         "threshold_minutes": 15,
@@ -317,6 +342,16 @@
         ],
         "whole_return_fare_from_minutes": 120,
         "cancellation_percent_of_single_fare": 100,
+        "season_tickets": {
+          "journeys_per_season": {
+            "weekly": 10,
+            "monthly": 40,
+            "annual": 464
+          },
+          "at_120_minutes": "two_journeys",
+          "checked": "2026-10-05",
+          "note": "Archive capture 22 Sep 2026. Weekly divided by 40, 20, 10 and 5 for the four tiers; monthly by 160, 80, 40, 20; annual by 1,856, 928, 464, 232. No flexi or quarterly divisor listed"
+        },
         "claim_deadline_days": 28,
         "automatic_compensation": "none",
         "automatic_scope": null,
@@ -342,7 +377,7 @@
       "guide_url": "https://untap.money/guides/train-delay-repay/east-midlands-railway",
       "verification": "archive",
       "last_checked": "2026-09-30",
-      "version": "708a8fb04724",
+      "version": "74d0c60c2a20",
       "page_url": "https://untap.money/open-data/rules#rail_operator-EM"
     },
     {
@@ -351,7 +386,7 @@
       "subject": "Gatwick Express",
       "code": "GX",
       "rule_type": "delay_repay",
-      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. A season ticket is paid a share of one journey: the price divided by 10 for weekly, 40 for monthly, 120 for quarterly, 240 for six-monthly, 464 for annual. Claim within 28 days on the operator’s own form.",
       "values": {
         "scheme": "DR15",
         "threshold_minutes": 15,
@@ -389,6 +424,18 @@
         ],
         "whole_return_fare_from_minutes": 120,
         "cancellation_percent_of_single_fare": 100,
+        "season_tickets": {
+          "journeys_per_season": {
+            "weekly": 10,
+            "monthly": 40,
+            "quarterly": 120,
+            "six_monthly": 240,
+            "annual": 464
+          },
+          "at_120_minutes": "two_journeys",
+          "checked": "2026-10-05",
+          "note": "Annual 464, six-monthly 240, quarterly 120, monthly 40, weekly 10 single journeys. 120+ minutes: 100% of the cost of a return journey. No flexi divisor listed"
+        },
         "claim_deadline_days": 28,
         "automatic_compensation": "one-click",
         "automatic_scope": "Key smartcard only",
@@ -414,7 +461,7 @@
       "guide_url": "https://untap.money/guides/train-delay-repay/gatwick-express",
       "verification": "live",
       "last_checked": "2026-09-30",
-      "version": "432329b7660a",
+      "version": "8d277c0a4465",
       "page_url": "https://untap.money/open-data/rules#rail_operator-GX"
     },
     {
@@ -423,7 +470,7 @@
       "subject": "Great Northern",
       "code": "GN",
       "rule_type": "delay_repay",
-      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. A season ticket is paid a share of one journey: the price divided by 10 for weekly, 40 for monthly, 120 for quarterly, 240 for six-monthly, 464 for annual, 16 for flexi. Claim within 28 days on the operator’s own form.",
       "values": {
         "scheme": "DR15",
         "threshold_minutes": 15,
@@ -461,6 +508,19 @@
         ],
         "whole_return_fare_from_minutes": 120,
         "cancellation_percent_of_single_fare": 100,
+        "season_tickets": {
+          "journeys_per_season": {
+            "weekly": 10,
+            "monthly": 40,
+            "quarterly": 120,
+            "six_monthly": 240,
+            "annual": 464,
+            "flexi": 16
+          },
+          "at_120_minutes": "two_journeys",
+          "checked": "2026-10-05",
+          "note": "Annual 464, six-monthly 240, quarterly 120, monthly 40, weekly 10 single journeys; flexi divided by 16. 120+ minutes: a return journey (a full day of travel); flexi 2 single journeys"
+        },
         "claim_deadline_days": 28,
         "automatic_compensation": "one-click",
         "automatic_scope": "Key smartcard only, but all ticket types held on it",
@@ -486,7 +546,7 @@
       "guide_url": "https://untap.money/guides/train-delay-repay/great-northern",
       "verification": "live",
       "last_checked": "2026-09-30",
-      "version": "75ab35788730",
+      "version": "2c7b488e8135",
       "page_url": "https://untap.money/open-data/rules#rail_operator-GN"
     },
     {
@@ -495,7 +555,7 @@
       "subject": "Great Western Railway",
       "code": "GW",
       "rule_type": "delay_repay",
-      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. A season ticket is paid a share of one journey: the price divided by 10 for weekly, 40 for monthly, 464 for annual, 16 for flexi. Claim within 28 days on the operator’s own form.",
       "values": {
         "scheme": "DR15",
         "threshold_minutes": 15,
@@ -533,6 +593,17 @@
         ],
         "whole_return_fare_from_minutes": 120,
         "cancellation_percent_of_single_fare": 100,
+        "season_tickets": {
+          "journeys_per_season": {
+            "weekly": 10,
+            "monthly": 40,
+            "annual": 464,
+            "flexi": 16
+          },
+          "at_120_minutes": "two_journeys",
+          "checked": "2026-10-05",
+          "note": "Weekly 1/10, flexi 1/16, monthly 1/40, annual 1/464 of the price. Over 120 minutes: 200% of the cost of a journey"
+        },
         "claim_deadline_days": 28,
         "automatic_compensation": "one-click",
         "automatic_scope": "Advance tickets bought on GWR.com, GWR smartcard seasons, and Touch pay-as-you-go around Bristol",
@@ -558,7 +629,7 @@
       "guide_url": "https://untap.money/guides/train-delay-repay/great-western-railway",
       "verification": "live",
       "last_checked": "2026-09-30",
-      "version": "79860ac2c7c3",
+      "version": "b251386acd66",
       "page_url": "https://untap.money/open-data/rules#rail_operator-GW"
     },
     {
@@ -567,7 +638,7 @@
       "subject": "Greater Anglia",
       "code": "LE",
       "rule_type": "delay_repay",
-      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. A season ticket is paid a share of one journey value; Untap has not read this operator’s journey counts. Claim within 28 days on the operator’s own form.",
       "values": {
         "scheme": "DR15",
         "threshold_minutes": 15,
@@ -605,6 +676,7 @@
         ],
         "whole_return_fare_from_minutes": 120,
         "cancellation_percent_of_single_fare": 100,
+        "season_tickets": null,
         "claim_deadline_days": 28,
         "automatic_compensation": "none",
         "automatic_scope": null,
@@ -630,7 +702,7 @@
       "guide_url": "https://untap.money/guides/train-delay-repay/greater-anglia",
       "verification": "archive",
       "last_checked": "2026-09-30",
-      "version": "7916ba564cd7",
+      "version": "9b8cfb477f6a",
       "page_url": "https://untap.money/open-data/rules#rail_operator-LE"
     },
     {
@@ -639,7 +711,7 @@
       "subject": "Northern Trains",
       "code": "NT",
       "rule_type": "delay_repay",
-      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. A season ticket is paid a share of one journey value; Untap has not read this operator’s journey counts. Claim within 28 days on the operator’s own form.",
       "values": {
         "scheme": "DR15",
         "threshold_minutes": 15,
@@ -677,6 +749,7 @@
         ],
         "whole_return_fare_from_minutes": 120,
         "cancellation_percent_of_single_fare": 100,
+        "season_tickets": null,
         "claim_deadline_days": 28,
         "automatic_compensation": "one-click",
         "automatic_scope": "Advance tickets bought directly from Northern",
@@ -702,7 +775,7 @@
       "guide_url": "https://untap.money/guides/train-delay-repay/northern",
       "verification": "live",
       "last_checked": "2026-09-30",
-      "version": "f1e896ce223b",
+      "version": "96760e896eb9",
       "page_url": "https://untap.money/open-data/rules#rail_operator-NT"
     },
     {
@@ -711,7 +784,7 @@
       "subject": "South Western Railway",
       "code": "SW",
       "rule_type": "delay_repay",
-      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. A season ticket is paid a share of one journey: the price divided by 10 for weekly, 40 for monthly, 464 for annual, 16 for flexi. Claim within 28 days on the operator’s own form.",
       "values": {
         "scheme": "DR15",
         "threshold_minutes": 15,
@@ -749,6 +822,17 @@
         ],
         "whole_return_fare_from_minutes": 120,
         "cancellation_percent_of_single_fare": 100,
+        "season_tickets": {
+          "journeys_per_season": {
+            "weekly": 10,
+            "monthly": 40,
+            "annual": 464,
+            "flexi": 16
+          },
+          "at_120_minutes": "two_journeys",
+          "checked": "2026-10-05",
+          "note": "Weekly 1/10, flexi 1/16, monthly 1/40, annual 1/464 of the price. Season table is in percent of a return journey (12.5%, 25%, 50%, 100%), never more than two single journeys"
+        },
         "claim_deadline_days": 28,
         "automatic_compensation": "one-click",
         "automatic_scope": "Touch Smartcard and Advance tickets bought on the SWR site",
@@ -774,7 +858,7 @@
       "guide_url": "https://untap.money/guides/train-delay-repay/south-western-railway",
       "verification": "live",
       "last_checked": "2026-09-30",
-      "version": "87d25c47d0d3",
+      "version": "59c595d0d2a9",
       "page_url": "https://untap.money/open-data/rules#rail_operator-SW"
     },
     {
@@ -783,7 +867,7 @@
       "subject": "Southeastern",
       "code": "SE",
       "rule_type": "delay_repay",
-      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. A season ticket is paid a share of one journey: the price divided by 10 for weekly, 40 for monthly, 120 for quarterly, 464 for annual, 16 for flexi. Claim within 28 days on the operator’s own form.",
       "values": {
         "scheme": "DR15",
         "threshold_minutes": 15,
@@ -821,6 +905,18 @@
         ],
         "whole_return_fare_from_minutes": 120,
         "cancellation_percent_of_single_fare": 100,
+        "season_tickets": {
+          "journeys_per_season": {
+            "weekly": 10,
+            "monthly": 40,
+            "quarterly": 120,
+            "annual": 464,
+            "flexi": 16
+          },
+          "at_120_minutes": "two_journeys",
+          "checked": "2026-10-05",
+          "note": "Ticket price divided by 16 (flexi), 10 (weekly), 40 (monthly), 120 (quarterly) or 464 (annual) gives the journey rate. 2 hours or more: the return journey rate"
+        },
         "claim_deadline_days": 28,
         "automatic_compensation": "one-click",
         "automatic_scope": "Key smartcard, eTickets and Advance tickets bought direct",
@@ -846,7 +942,7 @@
       "guide_url": "https://untap.money/guides/train-delay-repay/southeastern",
       "verification": "live",
       "last_checked": "2026-09-30",
-      "version": "80688d96fdd2",
+      "version": "331040699efe",
       "page_url": "https://untap.money/open-data/rules#rail_operator-SE"
     },
     {
@@ -855,7 +951,7 @@
       "subject": "Southern",
       "code": "SN",
       "rule_type": "delay_repay",
-      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. A season ticket is paid a share of one journey: the price divided by 10 for weekly, 40 for monthly, 120 for quarterly, 240 for six-monthly, 464 for annual, 16 for flexi. Claim within 28 days on the operator’s own form.",
       "values": {
         "scheme": "DR15",
         "threshold_minutes": 15,
@@ -893,6 +989,19 @@
         ],
         "whole_return_fare_from_minutes": 120,
         "cancellation_percent_of_single_fare": 100,
+        "season_tickets": {
+          "journeys_per_season": {
+            "weekly": 10,
+            "monthly": 40,
+            "quarterly": 120,
+            "six_monthly": 240,
+            "annual": 464,
+            "flexi": 16
+          },
+          "at_120_minutes": "two_journeys",
+          "checked": "2026-10-05",
+          "note": "Annual 464, six-monthly 240, quarterly 120, monthly 40, weekly 10 single journeys; flexi divided by 16. 120+ minutes: a return journey (a full day of travel); flexi 2 single journeys"
+        },
         "claim_deadline_days": 28,
         "automatic_compensation": "one-click",
         "automatic_scope": "Key smartcard only, but all ticket types held on it",
@@ -918,7 +1027,7 @@
       "guide_url": "https://untap.money/guides/train-delay-repay/southern",
       "verification": "live",
       "last_checked": "2026-09-30",
-      "version": "709b65e6dc68",
+      "version": "23123f7080af",
       "page_url": "https://untap.money/open-data/rules#rail_operator-SN"
     },
     {
@@ -927,7 +1036,7 @@
       "subject": "Thameslink",
       "code": "TL",
       "rule_type": "delay_repay",
-      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. A season ticket is paid a share of one journey: the price divided by 10 for weekly, 40 for monthly, 120 for quarterly, 240 for six-monthly, 464 for annual, 16 for flexi. Claim within 28 days on the operator’s own form.",
       "values": {
         "scheme": "DR15",
         "threshold_minutes": 15,
@@ -965,6 +1074,19 @@
         ],
         "whole_return_fare_from_minutes": 120,
         "cancellation_percent_of_single_fare": 100,
+        "season_tickets": {
+          "journeys_per_season": {
+            "weekly": 10,
+            "monthly": 40,
+            "quarterly": 120,
+            "six_monthly": 240,
+            "annual": 464,
+            "flexi": 16
+          },
+          "at_120_minutes": "two_journeys",
+          "checked": "2026-10-05",
+          "note": "Annual 464, six-monthly 240, quarterly 120, monthly 40, weekly 10 single journeys; flexi divided by 16. 120+ minutes: a return journey (a full day of travel); flexi 2 single journeys"
+        },
         "claim_deadline_days": 28,
         "automatic_compensation": "one-click",
         "automatic_scope": "Key smartcard only, but all ticket types held on it",
@@ -990,7 +1112,7 @@
       "guide_url": "https://untap.money/guides/train-delay-repay/thameslink",
       "verification": "live",
       "last_checked": "2026-09-30",
-      "version": "7261f6112111",
+      "version": "cc298c8c60f2",
       "page_url": "https://untap.money/open-data/rules#rail_operator-TL"
     },
     {
@@ -999,7 +1121,7 @@
       "subject": "TransPennine Express",
       "code": "TP",
       "rule_type": "delay_repay",
-      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. A season ticket is paid a share of one journey: the price divided by 10 for weekly, 40 for monthly, 120 for quarterly, 464 for annual. Claim within 28 days on the operator’s own form.",
       "values": {
         "scheme": "DR15",
         "threshold_minutes": 15,
@@ -1037,6 +1159,17 @@
         ],
         "whole_return_fare_from_minutes": 120,
         "cancellation_percent_of_single_fare": 100,
+        "season_tickets": {
+          "journeys_per_season": {
+            "weekly": 10,
+            "monthly": 40,
+            "quarterly": 120,
+            "annual": 464
+          },
+          "at_120_minutes": "two_journeys",
+          "checked": "2026-10-05",
+          "note": "Divisor table: weekly 40, 20, 10, 5; monthly 160, 80, 40, 20; quarterly 480, 240, 120, 60; annual 1,856, 928, 464, 232. No flexi divisor listed"
+        },
         "claim_deadline_days": 28,
         "automatic_compensation": "one-click",
         "automatic_scope": "Advance tickets bought directly from TransPennine",
@@ -1062,7 +1195,7 @@
       "guide_url": "https://untap.money/guides/train-delay-repay/transpennine-express",
       "verification": "live",
       "last_checked": "2026-09-30",
-      "version": "85f5ef885a34",
+      "version": "b9deee35b722",
       "page_url": "https://untap.money/open-data/rules#rail_operator-TP"
     },
     {
@@ -1071,7 +1204,7 @@
       "subject": "Transport for Wales",
       "code": "AW",
       "rule_type": "delay_repay",
-      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. A season ticket is paid a share of one journey: the price divided by 10 for weekly, 40 for monthly, 464 for annual. Claim within 28 days on the operator’s own form.",
       "values": {
         "scheme": "DR15",
         "threshold_minutes": 15,
@@ -1109,6 +1242,16 @@
         ],
         "whole_return_fare_from_minutes": 120,
         "cancellation_percent_of_single_fare": 100,
+        "season_tickets": {
+          "journeys_per_season": {
+            "weekly": 10,
+            "monthly": 40,
+            "annual": 464
+          },
+          "at_120_minutes": "one_journey",
+          "checked": "2026-10-05",
+          "note": "Annual divided by 464, monthly by 40, weekly by 10, at most two claims a day. The page does not say what 120 minutes pays a season holder, so one journey is used"
+        },
         "claim_deadline_days": 28,
         "automatic_compensation": "one-click",
         "automatic_scope": "Advance tickets bought on the Transport for Wales website or app",
@@ -1134,7 +1277,7 @@
       "guide_url": "https://untap.money/guides/train-delay-repay/transport-for-wales",
       "verification": "live",
       "last_checked": "2026-09-30",
-      "version": "998e01feebf6",
+      "version": "d87db410ee4d",
       "page_url": "https://untap.money/open-data/rules#rail_operator-AW"
     },
     {
@@ -1143,7 +1286,7 @@
       "subject": "West Midlands Railway",
       "code": "LM",
       "rule_type": "delay_repay",
-      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. A season ticket is paid a share of one journey value; Untap has not read this operator’s journey counts. Claim within 28 days on the operator’s own form.",
       "values": {
         "scheme": "DR15",
         "threshold_minutes": 15,
@@ -1181,6 +1324,7 @@
         ],
         "whole_return_fare_from_minutes": 120,
         "cancellation_percent_of_single_fare": 100,
+        "season_tickets": null,
         "claim_deadline_days": 28,
         "automatic_compensation": "one-click",
         "automatic_scope": "Advance Single tickets bought through a West Midlands Railway or London Northwestern account",
@@ -1206,7 +1350,7 @@
       "guide_url": "https://untap.money/guides/train-delay-repay/west-midlands-railway",
       "verification": "unverified",
       "last_checked": "2026-09-30",
-      "version": "414055d1ff7a",
+      "version": "e61109326d59",
       "page_url": "https://untap.money/open-data/rules#rail_operator-LM"
     },
     {
@@ -1215,7 +1359,7 @@
       "subject": "London Northwestern Railway",
       "code": "LN",
       "rule_type": "delay_repay",
-      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "summary": "Pays from 15 minutes late: 25% of the single fare from 15 minutes, 50% from 30, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. A season ticket is paid a share of one journey value; Untap has not read this operator’s journey counts. Claim within 28 days on the operator’s own form.",
       "values": {
         "scheme": "DR15",
         "threshold_minutes": 15,
@@ -1253,6 +1397,7 @@
         ],
         "whole_return_fare_from_minutes": 120,
         "cancellation_percent_of_single_fare": 100,
+        "season_tickets": null,
         "claim_deadline_days": 28,
         "automatic_compensation": "one-click",
         "automatic_scope": "Advance Single tickets bought through a London Northwestern or West Midlands Railway account",
@@ -1278,7 +1423,7 @@
       "guide_url": "https://untap.money/guides/train-delay-repay/london-northwestern-railway",
       "verification": "unverified",
       "last_checked": "2026-09-30",
-      "version": "a0c7eadd15d0",
+      "version": "625c6f598168",
       "page_url": "https://untap.money/open-data/rules#rail_operator-LN"
     },
     {
@@ -1287,7 +1432,7 @@
       "subject": "CrossCountry",
       "code": "XC",
       "rule_type": "delay_repay",
-      "summary": "Pays from 30 minutes late: 50% of the single fare from 30 minutes, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "summary": "Pays from 30 minutes late: 50% of the single fare from 30 minutes, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. A season ticket is paid a share of one journey value; Untap has not read this operator’s journey counts. Claim within 28 days on the operator’s own form.",
       "values": {
         "scheme": "DR30",
         "threshold_minutes": 30,
@@ -1317,6 +1462,7 @@
         ],
         "whole_return_fare_from_minutes": 120,
         "cancellation_percent_of_single_fare": 100,
+        "season_tickets": null,
         "claim_deadline_days": 28,
         "automatic_compensation": "none",
         "automatic_scope": null,
@@ -1342,7 +1488,7 @@
       "guide_url": "https://untap.money/guides/train-delay-repay/crosscountry",
       "verification": "archive",
       "last_checked": "2026-09-30",
-      "version": "7a2d9b839fd0",
+      "version": "fc835c662f80",
       "page_url": "https://untap.money/open-data/rules#rail_operator-XC"
     },
     {
@@ -1351,7 +1497,7 @@
       "subject": "LNER",
       "code": "GR",
       "rule_type": "delay_repay",
-      "summary": "Pays from 30 minutes late: 50% of the single fare from 30 minutes, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "summary": "Pays from 30 minutes late: 50% of the single fare from 30 minutes, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. A season ticket is paid a share of one journey value; Untap has not read this operator’s journey counts. Claim within 28 days on the operator’s own form.",
       "values": {
         "scheme": "DR30",
         "threshold_minutes": 30,
@@ -1381,6 +1527,7 @@
         ],
         "whole_return_fare_from_minutes": 120,
         "cancellation_percent_of_single_fare": 100,
+        "season_tickets": null,
         "claim_deadline_days": 28,
         "automatic_compensation": "one-click",
         "automatic_scope": "Advance tickets bought directly from LNER",
@@ -1406,7 +1553,7 @@
       "guide_url": "https://untap.money/guides/train-delay-repay/lner",
       "verification": "live",
       "last_checked": "2026-09-30",
-      "version": "c04615149a82",
+      "version": "bf64eaa01210",
       "page_url": "https://untap.money/open-data/rules#rail_operator-GR"
     },
     {
@@ -1415,7 +1562,7 @@
       "subject": "ScotRail",
       "code": "SR",
       "rule_type": "delay_repay",
-      "summary": "Pays from 30 minutes late: 50% of the single fare from 30 minutes, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "summary": "Pays from 30 minutes late: 50% of the single fare from 30 minutes, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. A season ticket is paid a share of one journey value; Untap has not read this operator’s journey counts. Claim within 28 days on the operator’s own form.",
       "values": {
         "scheme": "DR30",
         "threshold_minutes": 30,
@@ -1445,6 +1592,7 @@
         ],
         "whole_return_fare_from_minutes": 120,
         "cancellation_percent_of_single_fare": 100,
+        "season_tickets": null,
         "claim_deadline_days": 28,
         "automatic_compensation": "none",
         "automatic_scope": null,
@@ -1470,7 +1618,7 @@
       "guide_url": "https://untap.money/guides/train-delay-repay/scotrail",
       "verification": "archive",
       "last_checked": "2026-09-30",
-      "version": "8b73d7510b71",
+      "version": "924b49e4bb3e",
       "page_url": "https://untap.money/open-data/rules#rail_operator-SR"
     },
     {
@@ -1479,7 +1627,7 @@
       "subject": "Lumo",
       "code": "LD",
       "rule_type": "delay_repay",
-      "summary": "Pays from 30 minutes late: 50% of the single fare from 30 minutes, 100% from 60. On a return ticket, the most paid for one direction is half the return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "summary": "Pays from 30 minutes late: 50% of the single fare from 30 minutes, 100% from 60. On a return ticket, the most paid for one direction is half the return fare. A cancelled journey is refunded at 100% of the single fare. A season ticket is paid a share of one journey: the price divided by 10 for weekly, 40 for monthly, 120 for quarterly, 464 for annual. Claim within 28 days on the operator’s own form.",
       "values": {
         "scheme": "DR30",
         "threshold_minutes": 30,
@@ -1505,6 +1653,17 @@
         ],
         "whole_return_fare_from_minutes": null,
         "cancellation_percent_of_single_fare": 100,
+        "season_tickets": {
+          "journeys_per_season": {
+            "weekly": 10,
+            "monthly": 40,
+            "quarterly": 120,
+            "annual": 464
+          },
+          "at_120_minutes": "one_journey",
+          "checked": "2026-10-05",
+          "note": "Divisor table: weekly 20 and 10, monthly 80 and 40, quarterly 240 and 120, annual 928 and 464, for 30 to 59 and above 60 minutes. No higher tier"
+        },
         "claim_deadline_days": 28,
         "automatic_compensation": "one-click",
         "automatic_scope": "LumoFixed and LumoFlex Advance tickets bought on the Lumo website or app, with prior opt-in",
@@ -1530,7 +1689,7 @@
       "guide_url": "https://untap.money/guides/train-delay-repay/lumo",
       "verification": "live",
       "last_checked": "2026-09-30",
-      "version": "9ee5d29885ec",
+      "version": "389a276b55f1",
       "page_url": "https://untap.money/open-data/rules#rail_operator-LD"
     },
     {
@@ -1539,7 +1698,7 @@
       "subject": "Hull Trains",
       "code": "HT",
       "rule_type": "delay_repay",
-      "summary": "Pays from 30 minutes late: 50% of the single fare from 30 minutes, 100% from 60. On a return ticket, the most paid for one direction is half the return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "summary": "Pays from 30 minutes late: 50% of the single fare from 30 minutes, 100% from 60. On a return ticket, the most paid for one direction is half the return fare. A cancelled journey is refunded at 100% of the single fare. A season ticket is paid a share of one journey: the price divided by 10 for weekly, 40 for monthly, 120 for quarterly, 464 for annual. Claim within 28 days on the operator’s own form.",
       "values": {
         "scheme": "DR30",
         "threshold_minutes": 30,
@@ -1565,6 +1724,17 @@
         ],
         "whole_return_fare_from_minutes": null,
         "cancellation_percent_of_single_fare": 100,
+        "season_tickets": {
+          "journeys_per_season": {
+            "weekly": 10,
+            "monthly": 40,
+            "quarterly": 120,
+            "annual": 464
+          },
+          "at_120_minutes": "one_journey",
+          "checked": "2026-10-05",
+          "note": "Divisor table: weekly 20 and 10, monthly 80 and 40, quarterly 240 and 120, annual 928 and 464, for 30 to 59 and above 60 minutes. Worked example: £3,840 annual, 45 minutes late, £3,840 ÷ 928 = £4.14"
+        },
         "claim_deadline_days": 28,
         "automatic_compensation": "none",
         "automatic_scope": null,
@@ -1590,7 +1760,7 @@
       "guide_url": "https://untap.money/guides/train-delay-repay/hull-trains",
       "verification": "live",
       "last_checked": "2026-09-30",
-      "version": "127bb5bd87a4",
+      "version": "e4cd6ef94348",
       "page_url": "https://untap.money/open-data/rules#rail_operator-HT"
     },
     {
@@ -1599,7 +1769,7 @@
       "subject": "Caledonian Sleeper",
       "code": "CS",
       "rule_type": "delay_repay",
-      "summary": "Pays from 30 minutes late: 50% of the single fare from 30 minutes, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. Claim within 28 days on the operator’s own form.",
+      "summary": "Pays from 30 minutes late: 50% of the single fare from 30 minutes, 100% from 60. On a return ticket, one direction 120 minutes or more late pays the whole return fare. A cancelled journey is refunded at 100% of the single fare. A season ticket is paid a share of one journey value; Untap has not read this operator’s journey counts. Claim within 28 days on the operator’s own form.",
       "values": {
         "scheme": "DR30",
         "threshold_minutes": 30,
@@ -1629,6 +1799,7 @@
         ],
         "whole_return_fare_from_minutes": 120,
         "cancellation_percent_of_single_fare": 100,
+        "season_tickets": null,
         "claim_deadline_days": 28,
         "automatic_compensation": "one-click",
         "automatic_scope": "Tickets booked directly through sleeper.scot or the Guest Service Centre",
@@ -1654,7 +1825,7 @@
       "guide_url": "https://untap.money/guides/train-delay-repay/caledonian-sleeper",
       "verification": "live",
       "last_checked": "2026-09-30",
-      "version": "5eef449bffbc",
+      "version": "b4c768db0bb9",
       "page_url": "https://untap.money/open-data/rules#rail_operator-CS"
     },
     {
@@ -3346,7 +3517,7 @@
         "response_time": null,
         "form_fields": []
       },
-      "claim_url": "https://www.aircanada.com/customerrelations",
+      "claim_url": "https://accc-prod.microsoftcrmportals.com/en-CA/air-canada-contact-us/",
       "sources": [
         {
           "name": "Air Canada: UK long delay and flight cancellation notice",
@@ -3370,7 +3541,7 @@
       "guide_url": "https://untap.money/guides/flight-compensation-uk261",
       "verification": "live",
       "last_checked": "2026-09-30",
-      "version": "5d3eda3aca4b",
+      "version": "5643dee3981c",
       "page_url": "https://untap.money/open-data/rules#airline-AC"
     },
     {
