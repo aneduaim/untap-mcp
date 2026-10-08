@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "untap",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Untap checks UK refunds and compensation from delayed trains, disrupted flights, TfL journey charges and parking notices. Public checks return the applicable rules, amount, deadline and claim guidance. Sign in to save claims, track progress and check saved train commutes for dates you request. You submit claims directly to the operator or airline. Untap never files a claim for you.",
   "author": {
     "name": "Andrey Chekunin",
@@ -107,7 +107,7 @@
           "GB",
           "US"
         ],
-        "release_notes": "Version 1.3.2: train and flight checks that cannot get an answer now say so in fields (delay_known false, retryable, retry_after_seconds) rather than prose; a slow National Rail lookup keeps running and the retry is answered from a shared cache; when no train left at the time given, the result names the nearest and how to match it to the ticket; the TfL check lists what it does not cover; the OpenAPI spec types every result; Air Canada claims go to its new contact portal. Version 1.3.1: skill files now use strict YAML frontmatter so every platform reads their names and descriptions. Version 1.3.0: claim instructions for train operators, 34 airlines and TfL (where to claim, form fields, evidence, deadlines, who may submit, what happens next and the escalation route), an email scan that finds possible train, flight and TfL claims without storing anything, a REST mirror with an OpenAPI spec, and bundled Agent Skills for UK travel claims. Five positive and three negative production review scenarios use synthetic data."
+        "release_notes": "Version 1.3.3: tool descriptions now say that a record of each public check, with no name, account or IP address, is kept for a year so answers can be verified. Version 1.3.2: train and flight checks that cannot get an answer now say so in fields (delay_known false, retryable, retry_after_seconds) rather than prose; a slow National Rail lookup keeps running and the retry is answered from a shared cache; when no train left at the time given, the result names the nearest and how to match it to the ticket; the TfL check lists what it does not cover; the OpenAPI spec types every result; Air Canada claims go to its new contact portal. Version 1.3.1: skill files now use strict YAML frontmatter so every platform reads their names and descriptions. Version 1.3.0: claim instructions for train operators, 34 airlines and TfL (where to claim, form fields, evidence, deadlines, who may submit, what happens next and the escalation route), an email scan that finds possible train, flight and TfL claims without storing anything, a REST mirror with an OpenAPI spec, and bundled Agent Skills for UK travel claims. Five positive and three negative production review scenarios use synthetic data."
       }
     }
   }

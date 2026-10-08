@@ -2,7 +2,7 @@
 
 Untap checks UK refunds and compensation from delayed trains, disrupted flights, TfL journey charges and parking notices. Public checks return the applicable rules, amount, deadline and claim guidance. Sign in to save claims, track progress and check saved train commutes for dates you request. You submit claims directly to the operator or airline. Untap never files a claim for you.
 
-This Agent Plugins plugin connects your assistant to Untap's MCP server at `https://untap.money/api/mcp` and adds skills that tell it when and how to use Untap. Version 1.3.2.
+This Agent Plugins plugin connects your assistant to Untap's MCP server at `https://untap.money/api/mcp` and adds skills that tell it when and how to use Untap. Version 1.3.3.
 
 ## Use it
 
